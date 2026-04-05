@@ -27,6 +27,9 @@ Makes accessible design a first-class concern rather than an afterthought. The w
 ### Error and edge cases requirement
 The most important section for separating surface-level from thorough work. Students naturally design the happy path. This requirement forces them to think about what goes wrong: timeouts, conflicts, constraint violations. This is where the document's quality becomes visible.
 
+### Scope guidance (4-6 pages / 1500-2500 words)
+Students doing their first UX design exercise have no calibration for how much to write. Without guidance, they fall into two failure modes: (1) one paragraph per section, confusing "addressed" with "specified," or (2) overwriting everything in anxious prose, burying design decisions in filler. The page/word range gives a sanity check without becoming a target. Framing it as "shortest document a developer could build from" reinforces the quality bar and discourages padding. The guidance sits in "What You'll Produce" so students see it before they start writing, not after.
+
 ### Worked examples (seat state + booking flow step)
 Calibrate expectations across different dimensions. Without them, students produce wildly varying levels of detail. The first example (a seat state) shows: visual specification (colors, sizes), trigger description, user actions from this state, and constraint behavior. The second example (a booking flow step) shows: what the user sees, what they do, how constraints are enforced, and how they leave the step. Together, the two examples demonstrate that the same level of specificity applies whether students are describing a static state or a dynamic journey step. Students see the bar before they start, for two fundamentally different types of writing they'll need to do.
 

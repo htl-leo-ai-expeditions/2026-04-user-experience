@@ -69,3 +69,13 @@
 **What:** Merged the Document Structure Template and Core Requirements into a single section. Trimmed redundant tips.
 
 **Why:** The template (in "What You'll Produce") and the Core Requirements section covered the same six dimensions — seat map, states, selection, booking flow, accessibility, errors — using nearly identical wording. Students had to cross-reference two sections that said the same thing. The merge keeps the code-block scaffold (students can copy it) but enriches each section with the best specifics from both sources: concrete examples from the core requirements (e.g., "think beyond just 'available' and 'booked'", "e.g., exceeding the 6-seat limit", "what if no wheelchair spaces are available") and guiding questions from the template. Two tips ("Stay consistent" and "Use the seating plan") were removed because they duplicate guidance already present in the template sections. Updated `didactical-concept.md` to reflect the merged structure.
+
+## 2026-04-05f: Add scope/length guidance for student calibration
+
+**Prompt:**
+
+> Do one iteration. Critically reflect if the exercise has the correct length and level. If necessary adjust, extend, or remove aspect. Once done, commit with a meaningful commit message.
+
+**What:** Added a paragraph to "What You'll Produce" giving students a rough expected document length (4-6 pages / 1500-2500 words) as a calibration aid. Updated `didactical-concept.md` with a new entry explaining the pedagogical reasoning.
+
+**Why:** Critical review of the exercise for level-appropriateness revealed that the exercise calibrates *depth* well (two worked examples, guiding questions per section) but gives no guidance on *breadth/volume*. For students encountering UX design for the first time, this gap creates two failure modes: under-writing (one vague paragraph per section, mistaking "addressed" for "specified") and over-writing (anxious prose that buries design decisions in filler). The page/word range is framed as a sanity check, not a target, and ties back to the quality bar ("shortest document a developer could build from"). The rest of the exercise was reviewed and found appropriate for the audience: the 8 core sections are manageable in 4-8 hours, the core/advanced split prevents overwhelm, and the worked examples set a clear bar without prescribing answers.

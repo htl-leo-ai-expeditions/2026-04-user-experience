@@ -50,6 +50,8 @@ The quality bar: *Could a competent frontend developer build a working interacti
 
 If your answer is "probably not," your document isn't done yet.
 
+**How much should you write?** A solid core document typically runs 4-6 pages (roughly 1500-2500 words). That's not a target to hit for its own sake. It's a sanity check. If your document is one page, you're almost certainly too vague. If it's twelve pages, you're probably over-explaining things that a simple table or state list would handle better. Aim for the shortest document that a developer could actually build from. Every sentence should earn its place.
+
 ## Worked Example
 
 Here's an example of what one section of your design document might look like. This covers **one seat state** in full detail. Your document needs this level of specificity for *every* dimension.
