@@ -27,8 +27,8 @@ Makes accessible design a first-class concern rather than an afterthought. The w
 ### Error and edge cases requirement
 The most important section for separating surface-level from thorough work. Students naturally design the happy path. This requirement forces them to think about what goes wrong: timeouts, conflicts, constraint violations. This is where the document's quality becomes visible.
 
-### Worked example (one seat state)
-Calibrates expectations. Without it, students produce wildly varying levels of detail. The example shows: visual specification (colors, sizes), trigger description, user actions from this state, and constraint behavior. Students see the bar before they start.
+### Worked examples (seat state + booking flow step)
+Calibrate expectations across different dimensions. Without them, students produce wildly varying levels of detail. The first example (a seat state) shows: visual specification (colors, sizes), trigger description, user actions from this state, and constraint behavior. The second example (a booking flow step) shows: what the user sees, what they do, how constraints are enforced, and how they leave the step. Together, the two examples demonstrate that the same level of specificity applies whether students are describing a static state or a dynamic journey step. Students see the bar before they start, for two fundamentally different types of writing they'll need to do.
 
 ### Document structure template
 Kills blank-page paralysis. Students who know what sections to write can focus on content rather than structure. The template is loose enough that students must still decide how to organize their thoughts within each section.

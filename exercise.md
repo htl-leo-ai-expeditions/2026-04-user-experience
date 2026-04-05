@@ -104,7 +104,16 @@ Here's an example of what one section of your design document might look like. T
 > - **What the user can do from here:** Click the seat again to deselect it (returns to "available"). Or proceed to checkout with this seat in the selection.
 > - **Constraints:** If the user already has 6 seats selected, clicking an additional seat does nothing. A tooltip appears: "Maximum 6 seats per booking. Deselect a seat first."
 
-This is the level of detail you should aim for across your entire document. Your visual conventions, terminology, and format can differ from this example. What matters is that you're specific and consistent.
+Here's a second example, this time for a **booking flow step**:
+
+> **Step: Seat selection**
+>
+> - **What the user sees:** The seat map fills the main content area, with a compact booking summary pinned to the right (desktop) or bottom (mobile). The summary shows the selected showing's date/time, a list of selected seats (initially empty), and a running total. A "Continue to checkout" button sits below the summary, disabled until at least one seat is selected.
+> - **What the user does:** Clicks individual seats on the map to select them. Each click toggles the seat between "available" and "selected." The booking summary updates immediately with each change: seat label, seat type, price per seat, and the new total.
+> - **How constraints are enforced:** If the user selects a 7th seat, the click has no effect and a tooltip appears near the seat: "Maximum 6 seats per booking." If the user has indicated a wheelchair need (from the previous step), only wheelchair and companion seats are clickable. All other seats appear dimmed with reduced opacity (0.4) and show a "not available for your selection" tooltip on hover.
+> - **How the user leaves this step:** Clicks "Continue to checkout" (proceeds to the next step) or clicks the browser back button / a "Change showing" link above the seat map (returns to showing selection, seats are released).
+
+Two examples, two very different dimensions, same level of specificity. That's the bar for your entire document.
 
 ## Core Requirements
 

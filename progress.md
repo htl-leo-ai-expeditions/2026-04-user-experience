@@ -17,10 +17,13 @@
 - Created the didactical concept explaining the reasoning behind each exercise element.
 
 **Not yet done:**
-- The worked example could be expanded or a second example added for a different dimension (e.g., a booking flow step).
 - The document structure template could be refined based on review.
 
 ## 2026-04-05b: Create seating plan visual
+
+**Prompt:**
+
+> Do one iteration. Once done, commit with a meaningful commit message.
 
 **What:** Created `generate-visual.js` to programmatically generate the cinema seating plan as SVG, then converted to PNG.
 
@@ -33,5 +36,17 @@
 - Updated `didactical-concept.md` to document the visual's design rationale.
 
 **Not yet done:**
-- The worked example could be expanded or a second example added for a different dimension (e.g., a booking flow step).
+- The document structure template could be refined based on review.
+
+## 2026-04-05c: Add second worked example (booking flow step)
+
+**Prompt:**
+
+> Do one iteration. Once done, commit with a meaningful commit message.
+
+**What:** Added a second worked example to `exercise.md` showing a booking flow step ("Seat selection") at the same level of detail as the existing seat state example. Updated `didactical-concept.md` to reflect the expanded worked examples section.
+
+**Why:** The first example only demonstrated how to describe a visual state. Students also need to describe multi-step journeys, which require a different writing pattern (what the user sees, does, how constraints are enforced, how they leave the step). Two examples covering two fundamentally different dimensions help students calibrate their work across all sections of the document. Verified the new example passes the meta-level check: it shows depth and format but doesn't prescribe design decisions students must make.
+
+**Not yet done:**
 - The document structure template could be refined based on review.

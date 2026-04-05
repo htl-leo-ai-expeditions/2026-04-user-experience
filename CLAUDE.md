@@ -59,7 +59,7 @@ Each time you wake up, do the following **in order**:
    - Fix inconsistencies between goal and exercise
    - Review and polish language (following the exercise-writing skill)
 3. **Make the change** in the appropriate file(s). If the change affects didactical reasoning, update `didactical-concept.md` in the same step.
-4. **Document what you did** by appending an entry to `progress.md`.
+4. **Document what you did** by appending an entry to `progress.md`. Always include the prompt you were responding to.
 
 ## Rules
 
