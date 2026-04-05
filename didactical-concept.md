@@ -15,14 +15,20 @@ A cinema seat booking system hits the sweet spot: students have used these inter
 | Error and edge cases | Defensive UX thinking; specifying failure modes, not just happy paths |
 | Conventions section | Consistency as a design discipline; establishing shared vocabulary before diving in |
 | Worked example | Calibrates expected depth without dictating content for other dimensions |
+| Design questions per dimension | Forces trade-off reasoning; prevents shallow "the system shows an error" answers |
+| Document template | Eliminates blank-page paralysis; sets expected structure and granularity without providing answers |
+| Seating plan analysis prompts | Forces active reading of the visual artifact; ensures students extract spatial details before designing interactions |
 
 ## Non-Obvious Pitfalls
 
-- **Students will skip conventions.** They'll start with interaction design, contradict themselves by section 3, and not notice. The exercise tells them to write conventions first, but expect some to ignore it. Point them back when you see inconsistent terminology in drafts.
-- **"An error is shown" syndrome.** Many students will describe error handling as "the system shows an error." Push them: *what* does the user see, *where*, and *what can they do next*? The exercise calls this out explicitly, but it's the most common weakness.
-- **Companion seat logic is tricky.** The rule that companion seats behave differently depending on whether the adjacent wheelchair space is booked creates a conditional UX state. Some students will miss this entirely. Others will over-engineer it. Both are productive struggles.
-- **Confusing UX description with implementation.** Watch for students who slip into writing CSS ("background-color: #ccc") or pseudocode instead of describing visual properties and behaviors. The conventions section should prevent this, but it's a recurring tendency.
-- **Worked example as template.** Some students will replicate the table format from the worked example for every dimension, even where a different structure would be clearer (e.g., the booking flow is better as a step-by-step narrative). The exercise says "your approach can differ," but you may need to reinforce this.
+- **Students will skip conventions.** They'll start with interaction design, contradict themselves by section 3, and not notice. Point them back when you see inconsistent terminology in drafts.
+- **"An error is shown" syndrome.** The most common weakness. Push them: *what* does the user see, *where*, and *what can they do next*?
+- **Companion seat logic is tricky.** Companion seats behave differently depending on whether the adjacent wheelchair space is booked. Some students will miss this; others will over-engineer it. Both are productive struggles.
+- **Confusing UX description with implementation.** Watch for CSS ("background-color: #ccc") or pseudocode creeping in where visual properties and behaviors should be.
+- **Worked example as template.** Some students will replicate the table format for every dimension, even where a different structure would be clearer (e.g., the booking flow is better as a narrative). Reinforce "your approach can differ."
+- **Template treated as sufficient scope.** Some will interpret "fill in every section" as one paragraph per section. Point these students to the worked example and the scope guidance (1500-3000 words) to recalibrate.
+- **Design questions answered too literally.** The questions provoke trade-off thinking, not a questionnaire. Redirect students who answer them one by one: the questions are prompts for their design, not the structure of their document.
+- **Skimming the seating plan.** Check early drafts for designs that don't account for the actual layout (treating all rows as identical, ignoring aisles, missing the wheelchair/companion spatial relationship).
 
 ## Core vs. Advanced Split
 
