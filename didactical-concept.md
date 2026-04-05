@@ -13,6 +13,8 @@ The domain also produces genuine trade-offs with no single correct answer (how t
 ### Seating plan visual (provided in exercise)
 Forces students to ground their design in a concrete layout rather than designing in the abstract. Every UX decision must connect back to this artifact. Students who skip studying the plan will produce generic designs that don't account for the actual row sizes, wheelchair positions, or aisle placement.
 
+The visual is generated programmatically (`generate-visual.js` produces an SVG, converted to PNG). This makes it easy to adjust the layout if needed. The plan uses color-coding and a legend to distinguish seat types (standard, premium, wheelchair, companion), includes row labels and seat numbers, and shows the center aisle and screen position. The visual is intentionally simple: it conveys the spatial structure without suggesting any particular UI treatment, leaving that design work to the students.
+
 ### Seat states requirement
 Teaches state modeling as a UX concern. Students who've done database work understand entity states, but they haven't thought about how each state needs a distinct visual representation and defined transitions. This bridges their backend mental model to frontend thinking.
 
