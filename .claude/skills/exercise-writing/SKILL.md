@@ -53,7 +53,7 @@ A single worked example communicates expectations better than a page of instruct
 
 - Choose an example that is **simple enough to understand quickly** but **rich enough to demonstrate the patterns** students should follow.
 - Place the example between the instructions and the requirements, so students see the bar before they check their work.
-- Add a callout after the example: "This is the level of detail you should aim for on [X]. Your [conventions/format/approach] can differ from this example. What matters is that you're consistent."
+- Add a callout after the example; e.g.: "This is the level of detail you should aim for on [X]. Your [conventions/format/approach] can differ from this example. What matters is that you're consistent."
 
 ### Tiered Complexity
 

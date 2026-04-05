@@ -123,3 +123,31 @@
 - Explicit "must not" list prevents grading, student comparison, and content generation on behalf of the student.
 - Each section has a target length (sentence or bullet count) to keep reports concise and comparable.
 - The quality bar from the exercise ("could a developer build this?") is carried through as the lens for all feedback.
+
+## 2026-04-05i: Extract reusable skills from CLAUDE.md
+
+**Prompt:**
+
+> Critically evaluate CLAUDE.md, goal.md, and report-prompt.md. Plan which additional skills we could create to reduce exercise-specific instructions and reuse the general setup across future exercises.
+
+**What:** Created 5 new skills and rewrote CLAUDE.md to reference them. The goal is to make bootstrapping new exercises faster by extracting reusable patterns into skills.
+
+**New skills created (in `.claude/skills/`):**
+
+1. **`exercise-loop`** — The core Ralph loop workflow (read→improve→document). Absorbs the Agent Workflow and Rules sections from CLAUDE.md.
+2. **`didactical-concept`** — How to write and maintain the teacher guide. Absorbs the "Maintaining didactical-concept.md" section from CLAUDE.md.
+3. **`goal-template`** — Template for writing `goal.md` files. Codifies the implicit structure shared by both existing exercises.
+4. **`feedback-report`** — Template for writing `report-prompt.md` files. Provides universal structure, tone rules, and prohibitions; exercise author adds domain-specific sections.
+5. **`persona-testing`** — How to simulate student personas (struggling, average, strong) to stress-test exercises. Codifies the process from iteration 2026-04-05g.
+
+**CLAUDE.md rewrite:** Reduced from 73 lines to ~25 lines. Now contains only: skill references, exercise-specific files (generate-visual.js), and exercise-specific rules (meta-level check, svg-to-png usage). All reusable workflow, rules, and maintenance procedures live in skills.
+
+**Why:** Both existing exercises (UX and web-api) shared ~70% of their CLAUDE.md content. Creating a new exercise meant copy-pasting and manually stripping domain-specific content, which was error-prone and created drift. With skills extracted, a new exercise's CLAUDE.md only needs ~8-25 lines of exercise-specific content.
+
+**Files changed:**
+- `.claude/skills/exercise-loop/SKILL.md` (new)
+- `.claude/skills/didactical-concept/SKILL.md` (new)
+- `.claude/skills/goal-template/SKILL.md` (new)
+- `.claude/skills/feedback-report/SKILL.md` (new)
+- `.claude/skills/persona-testing/SKILL.md` (new)
+- `CLAUDE.md` (rewritten)
