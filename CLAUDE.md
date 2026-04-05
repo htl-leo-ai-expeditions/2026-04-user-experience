@@ -6,4 +6,8 @@ All exercise requirements (learning objectives, domain, constraints, deliverable
 
 ## Skills
 
-Take a close look at the skills that were provided to you. Pay special attention to `exercise-loop`. Let it be your main driver for work.
+Take a close look at the skills that were provided to you. You must read at least:
+
+* `exercise-loop` skill
+* `didactical-concept` skill
+* `exercise-writing` skill

@@ -46,6 +46,7 @@ Examples of valid single-focus improvements:
 - Refine the goal document
 - Fix inconsistencies between goal and exercise
 - Review and polish language
+
 ## Rules
 
 - **One focus per run.** Do not try to do everything at once. Make one meaningful, well-considered improvement.
