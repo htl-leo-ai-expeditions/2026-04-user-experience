@@ -59,3 +59,13 @@
 **Why:** The template previously listed what each section should cover but didn't help students gauge whether their content was specific enough. The guiding questions push students from "I addressed this topic" toward "I described this in enough detail to build from." Each question targets the most common gap for that section (missing visual specifics, unclear step transitions, unspecified error recovery). All questions stay at the meta-level: they ask what to think about, not what to write. Verified meta-level check passes: the questions cannot be submitted as answers in a design document.
 
 **This resolves** the recurring "template could be refined" item from prior iterations.
+
+## 2026-04-05e: Remove duplication between template and core requirements
+
+**Prompt:**
+
+> Do one iteration, but do not add things this time. Look at the current status with a fresh eye and improve, restructure, rephrase, reformat, remove duplication. Once done, commit with a meaningful commit message.
+
+**What:** Merged the Document Structure Template and Core Requirements into a single section. Trimmed redundant tips.
+
+**Why:** The template (in "What You'll Produce") and the Core Requirements section covered the same six dimensions — seat map, states, selection, booking flow, accessibility, errors — using nearly identical wording. Students had to cross-reference two sections that said the same thing. The merge keeps the code-block scaffold (students can copy it) but enriches each section with the best specifics from both sources: concrete examples from the core requirements (e.g., "think beyond just 'available' and 'booked'", "e.g., exceeding the 6-seat limit", "what if no wheelchair spaces are available") and guiding questions from the template. Two tips ("Stay consistent" and "Use the seating plan") were removed because they duplicate guidance already present in the template sections. Updated `didactical-concept.md` to reflect the merged structure.

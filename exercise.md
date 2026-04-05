@@ -44,70 +44,11 @@ Study the seating plan carefully. Every design decision you make should connect 
 
 ## What You'll Produce
 
-A single UX design document (text-based, no graphical mockups required) that fully specifies how the booking interface looks and behaves. Your document must cover the dimensions listed in the requirements below.
+A single UX design document (text-based, no graphical mockups required) that fully specifies how the booking interface looks and behaves.
 
 The quality bar: *Could a competent frontend developer build a working interactive prototype from your document alone, without needing to ask any clarifying questions about how the interface should look or behave?*
 
 If your answer is "probably not," your document isn't done yet.
-
-### Document Structure Template
-
-Use this structure as a starting point for your design document. You can rename sections or add subsections, but every topic listed here must be covered somewhere.
-
-```
-1. Overview
-   Brief description of the system and its purpose.
-   Define the terminology you'll use throughout. If you call it
-   a "seat map" here, don't switch to "seating chart" later.
-
-2. Seat Map Design
-   How the seating layout is visually represented.
-   How different seat types are distinguished.
-   How the screen, aisles, and row labels are shown.
-   → What does the user see first when the map loads?
-     How do they orient themselves in the layout?
-
-3. Seat States
-   Every possible state a seat can be in.
-   How each state looks visually.
-   What transitions between states are possible.
-   → For each state: could a developer implement it from your
-     description alone, without guessing colors, icons, or borders?
-
-4. Booking Flow
-   Step-by-step user journey from landing to confirmation.
-   What the user sees and does at each step.
-   What information is collected and when.
-   → For each step: how does the user arrive, and how do they
-     move forward (or go back)?
-
-5. Selection Behavior
-   How users select and deselect seats.
-   How group selection works.
-   What constraints are enforced during selection.
-   → What exactly changes on screen the moment a user clicks
-     a seat? What if that click violates a rule?
-
-6. Accessibility and Special Requirements
-   How users indicate accessibility needs.
-   How the system responds to those needs.
-   How wheelchair and companion seat rules are enforced.
-   → At what point in the flow does the user declare their needs?
-     How does that change what they see from that point on?
-
-7. Error and Edge Cases
-   What can go wrong and how the system communicates it.
-   Timeout behavior.
-   Conflict resolution when seats become unavailable.
-   → For each error: what exactly does the user see, and what
-     can they do next?
-
-8. Summary and Booking Confirmation
-   What the user sees before confirming.
-   What information is displayed after confirmation.
-   → Is there enough detail for the user to verify everything
-     is correct before they commit?
-```
 
 ## Worked Example
 
@@ -133,14 +74,64 @@ Two examples, two very different dimensions, same level of specificity. That's t
 
 ## Core Requirements
 
-This is the main event. Every student must address these dimensions in their design document. For each item, your document must contain enough detail to pass the quality bar above.
+Use this structure as a starting point for your design document. You can rename sections or add subsections, but every topic listed here must be covered. For each one, your document must be detailed enough to pass the quality bar above.
 
-- [ ] **Seat map visualization**: How is the seating layout rendered on screen? How are rows, aisles, the screen, and different seat types visually distinguished? How does the user orient themselves in the map?
-- [ ] **Seat states**: What are all possible states a seat can be in? (Think beyond just "available" and "booked.") How is each state visually represented? What triggers transitions between states?
-- [ ] **Selection interaction**: How does a user select a seat? Deselect? Select multiple seats for a group? What feedback does the UI provide during selection? What happens when a selection violates a constraint (e.g., exceeding the 6-seat limit)?
-- [ ] **Booking flow**: What is the step-by-step journey from choosing a showing to receiving a confirmation? What does the user see and do at each step? What information is shown and collected at each stage?
-- [ ] **Accessibility handling**: How does a user indicate they need a wheelchair space? How does the system surface available wheelchair and companion seats? How is the "companion seat required" rule communicated and enforced? What if no wheelchair spaces are available for the chosen showing?
-- [ ] **Error and edge cases**: What happens if a held seat times out? What if another user books a seat you've selected? What if the user tries to book more seats than allowed? How does the system communicate each of these situations?
+```
+1. Overview
+   Brief description of the system and its purpose.
+   Define the terminology you'll use throughout. If you call it
+   a "seat map" here, don't switch to "seating chart" later.
+
+2. Seat Map Design
+   How the seating layout is rendered on screen. How rows, aisles,
+   the screen, and different seat types are visually distinguished.
+   → What does the user see first when the map loads?
+     How do they orient themselves in the layout?
+
+3. Seat States
+   Every possible state a seat can be in (think beyond just
+   "available" and "booked"). How each state looks visually.
+   What triggers transitions between states.
+   → For each state: could a developer implement it from your
+     description alone, without guessing colors, icons, or borders?
+
+4. Booking Flow
+   Step-by-step journey from choosing a showing to receiving
+   a confirmation. What the user sees and does at each step.
+   What information is shown and collected at each stage.
+   → For each step: how does the user arrive, and how do they
+     move forward (or go back)?
+
+5. Selection Behavior
+   How users select and deselect seats. How group selection works
+   for multiple seats. What feedback the UI provides during
+   selection. What happens when a selection violates a constraint
+   (e.g., exceeding the 6-seat limit).
+   → What exactly changes on screen the moment a user clicks
+     a seat? What if that click violates a rule?
+
+6. Accessibility and Special Requirements
+   How users indicate accessibility needs. How the system surfaces
+   available wheelchair and companion seats. How the "companion
+   seat required" rule is communicated and enforced.
+   → At what point in the flow does the user declare their needs?
+     What if no wheelchair spaces are available for the chosen
+     showing?
+
+7. Error and Edge Cases
+   What happens when a held seat times out. What if another user
+   books a seat you've selected. What if the user tries to book
+   more seats than allowed. How the system communicates each
+   situation.
+   → For each error: what exactly does the user see, and what
+     can they do next?
+
+8. Summary and Booking Confirmation
+   What the user sees before confirming.
+   What information is displayed after confirmation.
+   → Is there enough detail for the user to verify everything
+     is correct before they commit?
+```
 
 ## Advanced Requirements
 
@@ -177,8 +168,6 @@ If any answer is "no" or "I'm not sure," that's where your document needs more w
 - **Be specific.** "The seat changes color" tells nobody anything. *Which* color? *When* does it change? *What* was it before?
 - **Think like a builder.** Someone will implement your design. Could they do it without guessing what you meant?
 - **Design the sad paths.** Happy paths are easy. The quality of your document shows in how you handle timeouts, conflicts, and constraint violations.
-- **Stay consistent.** Pick terminology and stick with it. If you call it a "seat map" in section 2, don't switch to "seating chart" in section 5.
-- **Use the seating plan.** Every design decision should trace back to the actual layout. If you describe a feature that doesn't make sense given the venue's structure, something's off.
 
 ## Submission
 
