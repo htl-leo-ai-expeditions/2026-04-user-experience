@@ -12,21 +12,21 @@ Test an exercise by simulating three student personas completing it. This reveal
 
 ## Personas
 
-### Struggling (e.g., "Luca")
+### Struggling
 
 - Reads instructions once, misses nuance
 - Produces minimal output, copies exercise language
 - Stops at first confusion, guesses rather than reasons
 - **Reveals:** insufficient scaffolding, ambiguous instructions, missing examples
 
-### Average (e.g., "Nina")
+### Average
 
 - Follows instructions carefully, produces decent happy paths
 - Thin on edge cases and error handling
 - Gets confused by implicit expectations
 - **Reveals:** unclear depth calibration, which sections lack worked examples, implicit assumptions
 
-### Strong (e.g., "Amir")
+### Strong
 
 - Thorough, precise, tackles advanced requirements
 - May find genuine ambiguities in business rules
@@ -35,18 +35,13 @@ Test an exercise by simulating three student personas completing it. This reveal
 
 ## Process
 
-1. **Spawn 3 subagents**, one per persona. Each reads `exercise.md` and `goal.md` and produces a complete submission as that persona would.
+1. **Spawn 3 subagents**, one per persona. Each reads the exercise specification and produces a complete submission as that persona would.
 2. **Save solutions** to `solution-basic/`, `solution-average/`, `solution-good/`.
-3. **Generate feedback reports** for each submission using `report-prompt.md`.
+3. **Generate feedback reports** for each submission. Focus on the issues revealed by that persona's failure modes.
 4. **Cross-persona analysis:** Identify issues raised across personas.
-5. **Make targeted improvements** to `exercise.md` (and `didactical-concept.md` if affected).
-6. **Log all changes** and observations in `progress.md`.
+5. **Make targeted improvements** to the exercise and accompanying documents (e.g. didactical concept) to address the issues.
 
 ## Cross-Persona Analysis
-
-- Issues raised by **all 3 personas** = critical (fix immediately)
-- Issues raised by **2 personas** = important (likely fix)
-- Issues raised by **1 persona** = consider (may be persona-specific)
 
 Focus improvements on issues raised by 2 or more personas. Single-persona issues may reflect persona-specific behavior rather than exercise flaws.
 
@@ -61,15 +56,4 @@ Focus improvements on issues raised by 2 or more personas. Single-persona issues
 
 ## Meta-Level Check
 
-After making improvements based on persona testing, re-read `exercise.md` and verify: "Could a student submit this exercise text as their design document?" If yes, the exercise has become too concrete. Roll back or abstract the offending additions.
-
-## Output
-
-After persona testing, the project should contain:
-
-- `solution-basic/` — struggling persona's submission + feedback report
-- `solution-average/` — average persona's submission + feedback report
-- `solution-good/` — strong persona's submission + feedback report
-- Updated `exercise.md` with targeted improvements
-- Updated `didactical-concept.md` (if improvements affect didactical reasoning)
-- `progress.md` entry documenting findings and changes
+After making improvements based on persona testing, re-read the exercise and verify: "Could a student submit this exercise text as their design document?" If yes, the exercise has become too concrete. Roll back or abstract the offending additions.

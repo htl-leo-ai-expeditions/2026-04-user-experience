@@ -1,39 +1,38 @@
 ---
 name: didactical-concept
 description: |
-  How to write and maintain the teacher-facing didactical concept document (didactical-concept.md). Use this skill whenever creating, updating, or reviewing the didactical concept for any exercise project.
+  How to write and maintain the teacher-facing didactical concept document. Use this skill whenever creating, updating, or reviewing the didactical concept for any exercise project.
 ---
 
 # Didactical Concept Guide
 
-## What This File Is
+## Audience
 
-`didactical-concept.md` is a **teacher-facing guide**. It is NOT handed to students. It helps teachers understand and deliver the exercise. Teachers read it before class, not during a lecture.
+The didactical concept is written **for experienced teachers**. They know general pedagogy, classroom management, and differentiation strategies. Do not explain these. Focus exclusively on what is specific to *this* exercise — the choices you made, the pitfalls students will hit, and the non-obvious connections between requirements and learning objectives.
+
+## Brevity
+
+Keep it short. A few focused paragraphs beat a long document nobody reads. Every sentence must earn its place by saying something a competent teacher would not already know from reading the exercise itself. If a point is obvious to an experienced teacher, cut it.
 
 ## When to Update
 
-Whenever you change `exercise.md` or `goal.md` in a way that affects the didactical reasoning, **update `didactical-concept.md` as part of the same change**. Do not leave it for a later iteration.
+Whenever you change the exercise or goal in a way that affects the didactical reasoning, **update the didactical concept as part of the same change**.
 
-## Keep It in Sync
+## What to Cover
 
-If you add, remove, or change a requirement or section in the exercise, update the corresponding entry in the didactical concept to explain what that element teaches and why it is there.
+- **Why this domain.** One or two sentences on what makes it a good fit for the learning objectives.
+- **Requirement → learning objective map.** For each major requirement, briefly state what it teaches. A table or short list is fine.
+- **Non-obvious pitfalls.** Concrete struggle points a teacher wouldn't spot from reading the exercise alone, with brief remediation hints.
+- **Core vs. advanced split rationale.** Why the boundary is where it is. Skip general differentiation theory.
+- **Meta-goal connection.** How the exercise ties back to the overarching learning objective (e.g., "specification as professional skill").
 
-## Required Dimensions
+## What NOT to Cover
 
-Cover these at minimum:
-
-- **Why the domain was chosen.** What makes it suitable for the learning objectives? Why is it familiar, appropriately complex, and engaging for students?
-- **What each major requirement is designed to teach.** For every significant section or requirement in the exercise, explain the skill or concept it develops.
-- **Where students commonly struggle and how to help them.** Concrete struggle points with practical remediation suggestions for teachers.
-- **How the core vs. advanced split serves differentiation.** Why the split exists, what each tier targets, and how teachers should manage students at different levels.
-- **How the exercise connects to the broader learning objective.** The "design document as AI prompt" framing, the "specification as professional skill" angle, or whatever the exercise's meta-goal is.
-
-## Document Hidden Complexity
-
-For each non-obvious aspect of the exercise (gotchas, common student mistakes, subtle design trade-offs), explain what to watch for and how a teacher can guide students through it. These are the things a teacher wouldn't spot from reading `exercise.md` alone.
+- General didactical principles (constructive alignment, Bloom's taxonomy, etc.) — the audience already knows these.
+- Lengthy justifications for standard teaching choices.
+- Anything a teacher can see directly by reading the exercise.
 
 ## Style
 
-- **Concise and actionable.** Each entry should help a teacher do something, not just understand something.
-- **Do not bloat.** If it takes more than a few sentences to explain a point, the point is probably too broad. Split it.
-- **Use the same terminology** as `exercise.md` and `goal.md` so teachers can map entries back to specific exercise sections.
+- **Concise and actionable.** Help the teacher *do* something, not just *understand* something.
+- **Use the same terminology** as the exercise and goal so teachers can map entries back to specific sections.

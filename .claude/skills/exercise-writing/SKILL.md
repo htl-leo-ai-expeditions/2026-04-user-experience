@@ -1,7 +1,7 @@
 ---
 name: exercise-writing
 description: |
-  Style and voice guide for writing student exercises. Use this skill whenever the user asks to create, draft, write, or revise a student exercise, handout, assignment, or worksheet for CS/IT students.
+  Style, voice, and structure guide for writing student exercises. Use this skill whenever the user asks to create, draft, write, or revise a student exercise, handout, assignment, or worksheet for CS/IT students.
 ---
 
 # Exercise Writing Style Guide
@@ -110,3 +110,4 @@ Before the submission section, include 3-5 yes/no self-check questions. Frame th
 - Don't praise the exercise within the exercise. Focus on the student's task.
 - Don't include implementation hints or code snippets unless the exercise is explicitly about coding.
 - Don't use numbered footnotes. If clarification is needed, put it inline or in a parenthetical.
+- After every change, re-read it and ask: "Could a student submit this exercise text as their work result?" If yes, you've gone too concrete.

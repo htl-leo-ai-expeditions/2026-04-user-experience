@@ -45,16 +45,11 @@ Examples of valid single-focus improvements:
 - Add a template or scaffold for the student's deliverable
 - Refine the goal document
 - Fix inconsistencies between goal and exercise
-- Review and polish language (following the `exercise-writing` skill)
-- Run student persona testing (see the `persona-testing` skill)
-- Create or update the feedback report prompt (see the `feedback-report` skill)
-
+- Review and polish language
 ## Rules
 
 - **One focus per run.** Do not try to do everything at once. Make one meaningful, well-considered improvement.
 - **Read before writing.** Never overwrite work from prior runs without understanding it first.
 - **Document your reasoning.** In `progress.md`, explain *what* you changed and *why*.
-- **You have no memory of prior runs.** That is expected. `progress.md` is your shared memory. Read it carefully.
+- **You have no memory of prior runs.** That is expected. `progress.md` is your shared memory. Read it carefully and make meaningful notes for future runs.
 - **You may improve any file**, including `goal.md`, but stay aligned with the requirements and design principles defined there.
-- **Write everything in English.** All files are in English.
-- **Follow the `exercise-writing` skill** for voice, tone, structure, and language in all student-facing text.

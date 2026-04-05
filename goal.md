@@ -3,6 +3,7 @@
 ## Mission
 
 Create a student exercise where students practice:
+
 - Writing a **detailed UX design document** for a graphical seat/space booking system
 - Practicing **AI prompting skills** by making the design document precise enough that a frontier LLM could build a working prototype from it alone
 
@@ -21,7 +22,7 @@ The exercise is **not** about implementing code. It is about producing a complet
 
 ### Primary
 
-1. **UX Design Thinking**: Students learn to systematically design a user experience for a spatially complex, interactive interface. They must think about layout, interaction patterns, state representation, user flows, edge cases, and accessibility before any code is written.
+1. **UX Design Thinking**: Students learn to systematically design a user experience for a spatially complex, interactive interface. They must think about layout, interaction patterns, state representation, user flows, edge cases, consistency, and accessibility before any code is written.
 
 2. **Writing a UX Design Document**: Students produce a structured document that fully specifies how a booking interface looks, behaves, and handles edge cases. The document should be precise, complete, and unambiguous, detailed enough that someone (or an LLM) could build a working prototype from it without asking clarifying questions.
 
@@ -74,6 +75,8 @@ The exercise handout must include a visual representation of the venue to book. 
 * User wants to book a wheelchair seat
 * There are only five wheelchair spots available, so the UX design document must explain how the user is limited to selecting from those five, how the UI communicates that limitation, and how the user can find out which ones are available.
 
+Do **not** include textual details (e.g. "the theatre has 5 wheelchair spaces") in the handout. The visual artifact should be the source of truth for all spatial and capacity information. Students must analyze it to extract the necessary details for their design.
+
 ## The Meta-Level Constraint
 
 **This is the single most important design principle for this exercise.**
@@ -96,8 +99,8 @@ The student produces a textual UX design document. The exercise must require stu
 
 - **Interaction design**: How does a user select seats/spaces? How does multi-select work for groups? What feedback does the UI give during selection?
 - **Booking flow**: What are the steps from "I want to book" to "booking confirmed"? What information is collected at each step?
-- **Special requirements handling**: How does a user indicate accessibility needs? How does the system surface available options? How are constraints enforced (e.g. companion seat next to wheelchair space)?
-- **State representation**: What states can a seat/space be in (available, selected, occupied, blocked, reserved-for-accessibility)? How is each state visually communicated?
+- **Special requirements handling**: How does a user indicate accessibility needs? How does the system surface available options? How are constraints enforced?
+- **State representation**: What states can a seat/space be in (available, selected, occupied, blocked, reserved-for-accessibility)? How is each state visually communicated (not concrete colors or fonts; students have to describe visual properties more abstractly like e.g. "selected seats must have a prominent visual appearance that stands out from other seat states")?
 - **Error and edge cases**: What happens when a selection becomes unavailable mid-booking? What if the group size exceeds available adjacent seats? How are conflicts communicated?
 
 ### Advanced Dimensions (stretch goals for stronger students)

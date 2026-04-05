@@ -1,6 +1,6 @@
 ---
 name: svg-to-png
-description: Convert SVG files to PNG (or PDF/PS/EPS) using librsvg2's rsvg-convert. Use when the user asks to convert, export, or rasterize an SVG image.
+description: Convert SVG files to PNG using librsvg2's rsvg-convert. Use when the user asks to convert, export, or rasterize an SVG image.
 ---
 
 # SVG to PNG conversion
@@ -15,35 +15,32 @@ rsvg-convert input.svg -o output.png
 
 ## Common options
 
-| Flag | Purpose | Example |
-|------|---------|---------|
-| `-w <px>` | Set output width | `-w 1024` |
-| `-h <px>` | Set output height | `-h 768` |
-| `-a` / `--keep-aspect-ratio` | Preserve aspect ratio when resizing | `-w 800 -a` |
-| `-z <factor>` | Zoom (scale) factor | `-z 2` (2x size) |
-| `-d <dpi>` | Set DPI (default 96) | `-d 300` |
-| `-b <color>` | Background color (CSS color) | `-b white`, `-b '#ff0000'` |
-| `-f <format>` | Output format: png, pdf, ps, eps, svg | `-f pdf` |
-| `-s <file.css>` | Apply external CSS stylesheet | `-s styles.css` |
+| Flag                         | Purpose                             | Example                    |
+| ---------------------------- | ----------------------------------- | -------------------------- |
+| `-w <px>`                    | Set output width                    | `-w 1024`                  |
+| `-h <px>`                    | Set output height                   | `-h 768`                   |
+| `-a` / `--keep-aspect-ratio` | Preserve aspect ratio when resizing | `-w 800 -a`                |
+| `-z <factor>`                | Zoom (scale) factor                 | `-z 2` (2x size)           |
+| `-d <dpi>`                   | Set DPI (default 96)                | `-d 300`                   |
+| `-b <color>`                 | Background color (CSS color)        | `-b white`, `-b '#ff0000'` |
+| `-s <file.css>`              | Apply external CSS stylesheet       | `-s styles.css`            |
 
 ## Typical recipes
 
 ### High-res PNG with white background
+
 ```bash
 rsvg-convert input.svg -w 1920 --keep-aspect-ratio -b white -d 300 -o output.png
 ```
 
 ### 2x scale (retina)
+
 ```bash
 rsvg-convert input.svg -z 2 -o output@2x.png
 ```
 
-### Convert to PDF
-```bash
-rsvg-convert input.svg -f pdf -o output.pdf
-```
-
 ### Batch convert all SVGs in a directory
+
 ```bash
 for f in *.svg; do rsvg-convert "$f" -o "${f%.svg}.png"; done
 ```
