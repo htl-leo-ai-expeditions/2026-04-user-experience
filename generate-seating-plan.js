@@ -18,14 +18,23 @@ const seatGap = 52;
 const leftMargin = 100;
 const topMargin = 110;
 const rowHeight = 52;
-const width = leftMargin + COLS * seatGap + 60;
+const aisleWidth = 24; // visual gap for aisles between seat columns
+const width = leftMargin + COLS * seatGap + 2 * aisleWidth + 60;
 const screenY = 40;
-const legendY = topMargin + ROWS.length * rowHeight + 40;
-const aisleY = legendY - 10;
-const totalHeight = legendY + 120;
+const legendY = topMargin + ROWS.length * rowHeight + 30;
+const totalHeight = legendY + 80;
+
+// Aisle positions: gaps before column index 1 and after column index 6
+// (i.e., between cols 0-1 and between cols 6-7, matching the original diagram)
+const aisleBeforeCols = new Set([1, 7]); // insert aisle gap before these column indices
 
 function seatX(col) {
-  return leftMargin + col * seatGap + seatGap / 2;
+  // Shift right by aisleWidth for each aisle gap before this column
+  let aisleOffset = 0;
+  for (const a of aisleBeforeCols) {
+    if (col >= a) aisleOffset += aisleWidth;
+  }
+  return leftMargin + col * seatGap + seatGap / 2 + aisleOffset;
 }
 
 function seatY(row) {
@@ -78,24 +87,32 @@ ROWS.forEach((row, ri) => {
       emit(`<text x="${cx}" y="${cy + 6}" text-anchor="middle" font-size="17">♿</text>`);
     } else if (type === "+") {
       // Companion seat
-      emit(`<circle cx="${cx}" cy="${cy}" r="${seatR}" fill="#d1c4e9" stroke="#7e57c2" stroke-width="1.5"/>`);
-      emit(`<text x="${cx}" y="${cy + 6}" text-anchor="middle" font-size="16" font-weight="700" fill="#5e35b1">+</text>`);
+      emit(`<circle cx="${cx}" cy="${cy}" r="${seatR}" fill="#7e57c2" stroke="#5e35b1" stroke-width="1.5"/>`);
+      emit(`<text x="${cx}" y="${cy + 7}" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">+</text>`);
     }
   });
 });
 
-// Aisle markers below row F
-const aislePositions = [0, 3.5, 7]; // between seat indices
-aislePositions.forEach(pos => {
-  const ax = (pos === 3.5)
-    ? (seatX(3) + seatX(4)) / 2
-    : seatX(pos);
-  emit(`<line x1="${ax}" y1="${aisleY - 8}" x2="${ax}" y2="${aisleY + 8}" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>`);
-  emit(`<text x="${ax}" y="${aisleY + 22}" text-anchor="middle" font-size="11" fill="#999">aisle</text>`);
+// Aisle strips — vertical dashed lines running through the seating area
+const aisleStripX = [];
+for (const a of aisleBeforeCols) {
+  // Position the aisle in the gap between the previous column and this one
+  const prevColRight = seatX(a - 1) + seatR + 2;
+  const thisColLeft = seatX(a) - seatR - 2;
+  aisleStripX.push((prevColRight + thisColLeft) / 2);
+}
+// Also add a center aisle between columns 3 and 4 (no gap, just a marker)
+aisleStripX.push((seatX(3) + seatX(4)) / 2);
+
+const aisleTop = seatY(0) - seatR - 8;
+const aisleBottom = seatY(ROWS.length - 1) + seatR + 8;
+
+aisleStripX.forEach(ax => {
+  emit(`<line x1="${ax}" y1="${aisleTop}" x2="${ax}" y2="${aisleBottom}" stroke="#bbb" stroke-width="2" stroke-dasharray="6,4"/>`);
+  emit(`<text x="${ax}" y="${aisleBottom + 16}" text-anchor="middle" font-size="11" fill="#999" font-style="italic">aisle</text>`);
 });
 
-// Legend
-const ly = legendY + 50;
+// Legend — 2×2 grid so it fits the canvas
 const items = [
   { type: "standard", label: "Standard seat" },
   { type: "premium", label: "Premium seat" },
@@ -103,25 +120,30 @@ const items = [
   { type: "companion", label: "Companion seat" },
 ];
 
-const legendStartX = leftMargin - 10;
-const legendGap = 160;
+const legendCols = 2;
+const legendColW = 220;
+const legendRowH = 26;
+const legendStartX = leftMargin + 10;
+const legendStartY = legendY + 14;
 
 items.forEach((item, i) => {
-  const lx = legendStartX + i * legendGap;
-  const iy = ly;
-  const r = 10;
+  const col = i % legendCols;
+  const row = Math.floor(i / legendCols);
+  const lx = legendStartX + col * legendColW;
+  const iy = legendStartY + row * legendRowH;
+  const r = 9;
 
   if (item.type === "standard") {
     emit(`<circle cx="${lx}" cy="${iy}" r="${r}" fill="#b8d4f0" stroke="#5a9bd5" stroke-width="1.2"/>`);
   } else if (item.type === "premium") {
     emit(`<circle cx="${lx}" cy="${iy}" r="${r}" fill="#fce4b8" stroke="#e6a817" stroke-width="1.2"/>`);
-    emit(`<text x="${lx}" y="${iy + 4}" text-anchor="middle" font-size="11" fill="#c48800">★</text>`);
+    emit(`<text x="${lx}" y="${iy + 4}" text-anchor="middle" font-size="10" fill="#c48800">★</text>`);
   } else if (item.type === "wheelchair") {
-    emit(`<rect x="${lx - 12}" y="${iy - 10}" width="24" height="20" rx="4" fill="#c8e6c9" stroke="#43a047" stroke-width="1.2"/>`);
-    emit(`<text x="${lx}" y="${iy + 4}" text-anchor="middle" font-size="12">♿</text>`);
+    emit(`<rect x="${lx - 11}" y="${iy - 9}" width="22" height="18" rx="4" fill="#c8e6c9" stroke="#43a047" stroke-width="1.2"/>`);
+    emit(`<text x="${lx}" y="${iy + 4}" text-anchor="middle" font-size="11">♿</text>`);
   } else if (item.type === "companion") {
-    emit(`<circle cx="${lx}" cy="${iy}" r="${r}" fill="#d1c4e9" stroke="#7e57c2" stroke-width="1.2"/>`);
-    emit(`<text x="${lx}" y="${iy + 4}" text-anchor="middle" font-size="12" font-weight="700" fill="#5e35b1">+</text>`);
+    emit(`<circle cx="${lx}" cy="${iy}" r="${r}" fill="#7e57c2" stroke="#5e35b1" stroke-width="1.2"/>`);
+    emit(`<text x="${lx}" y="${iy + 5}" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">+</text>`);
   }
 
   emit(`<text x="${lx + 16}" y="${iy + 4}" font-size="12" fill="#555">${item.label}</text>`);
