@@ -48,5 +48,14 @@
 
 **Why:** The first example only demonstrated how to describe a visual state. Students also need to describe multi-step journeys, which require a different writing pattern (what the user sees, does, how constraints are enforced, how they leave the step). Two examples covering two fundamentally different dimensions help students calibrate their work across all sections of the document. Verified the new example passes the meta-level check: it shows depth and format but doesn't prescribe design decisions students must make.
 
-**Not yet done:**
-- The document structure template could be refined based on review.
+## 2026-04-05d: Refine document structure template with guiding questions
+
+**Prompt:**
+
+> Do one iteration. Once done, commit with a meaningful commit message.
+
+**What:** Added guiding questions (marked with →) to each section of the document structure template in `exercise.md`. Updated `didactical-concept.md` to explain the pedagogical purpose of these questions.
+
+**Why:** The template previously listed what each section should cover but didn't help students gauge whether their content was specific enough. The guiding questions push students from "I addressed this topic" toward "I described this in enough detail to build from." Each question targets the most common gap for that section (missing visual specifics, unclear step transitions, unspecified error recovery). All questions stay at the meta-level: they ask what to think about, not what to write. Verified meta-level check passes: the questions cannot be submitted as answers in a design document.
+
+**This resolves** the recurring "template could be refined" item from prior iterations.

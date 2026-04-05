@@ -33,6 +33,8 @@ Calibrate expectations across different dimensions. Without them, students produ
 ### Document structure template
 Kills blank-page paralysis. Students who know what sections to write can focus on content rather than structure. The template is loose enough that students must still decide how to organize their thoughts within each section.
 
+Each template section includes one or two guiding questions (marked with →). These questions serve a specific purpose: they push students from "I wrote something for this section" toward "I wrote something a developer could actually build from." The questions target the most common gaps for each section (e.g., missing visual specifics in seat states, unclear navigation between booking flow steps, unspecified user recovery paths for errors). They stay at the meta-level: they ask *what to think about*, not *what to write*. A student who takes each question seriously will produce a more complete document without being steered toward any particular design.
+
 ## Where Students Commonly Struggle
 
 | Struggle | How to help |

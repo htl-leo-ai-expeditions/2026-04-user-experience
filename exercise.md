@@ -57,40 +57,56 @@ Use this structure as a starting point for your design document. You can rename 
 ```
 1. Overview
    Brief description of the system and its purpose.
+   Define the terminology you'll use throughout. If you call it
+   a "seat map" here, don't switch to "seating chart" later.
 
 2. Seat Map Design
    How the seating layout is visually represented.
    How different seat types are distinguished.
    How the screen, aisles, and row labels are shown.
+   → What does the user see first when the map loads?
+     How do they orient themselves in the layout?
 
 3. Seat States
    Every possible state a seat can be in.
    How each state looks visually.
    What transitions between states are possible.
+   → For each state: could a developer implement it from your
+     description alone, without guessing colors, icons, or borders?
 
 4. Booking Flow
    Step-by-step user journey from landing to confirmation.
    What the user sees and does at each step.
    What information is collected and when.
+   → For each step: how does the user arrive, and how do they
+     move forward (or go back)?
 
 5. Selection Behavior
    How users select and deselect seats.
    How group selection works.
    What constraints are enforced during selection.
+   → What exactly changes on screen the moment a user clicks
+     a seat? What if that click violates a rule?
 
 6. Accessibility and Special Requirements
    How users indicate accessibility needs.
    How the system responds to those needs.
    How wheelchair and companion seat rules are enforced.
+   → At what point in the flow does the user declare their needs?
+     How does that change what they see from that point on?
 
 7. Error and Edge Cases
    What can go wrong and how the system communicates it.
    Timeout behavior.
    Conflict resolution when seats become unavailable.
+   → For each error: what exactly does the user see, and what
+     can they do next?
 
 8. Summary and Booking Confirmation
    What the user sees before confirming.
    What information is displayed after confirmation.
+   → Is there enough detail for the user to verify everything
+     is correct before they commit?
 ```
 
 ## Worked Example
