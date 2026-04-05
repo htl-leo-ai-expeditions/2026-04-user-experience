@@ -16,34 +16,7 @@ A UX design document is a prompt. It tells someone (human or AI) exactly what to
 
 Study the seating plan below carefully. It is your **single source of truth** for the cinema's layout. Every detail you need about capacity, seat types, and spatial arrangement is encoded in this diagram. There is no separate description. You must extract the information yourself.
 
-```
-                         ┌─────────────────────────────────────┐
-                         │            S C R E E N              │
-                         └─────────────────────────────────────┘
-
-                              1   2   3   4   5   6   7   8
-
-                  Row A       o   o   o   o   o   o   o   o
-
-                  Row B       o   o   o   o   o   o   o   o
-
-                  Row C       o   o   o   ★   ★   o   o   o
-
-                  Row D       o   o   ★   ★   ★   ★   o   o
-
-                  Row E       o   o   ★   ★   ★   ★   o   o
-
-                  Row F      [♿] [+]  o   o   o   o  [+] [♿]
-
-                              ↑               ↑              ↑
-                           aisle           aisle           aisle
-
-
-                  Legend:  o  = standard seat
-                           ★  = premium seat (center block)
-                           ♿ = wheelchair space
-                           [+] = companion seat (next to wheelchair space)
-```
+![CineStar seating plan](seating-plan.png)
 
 **Rules for this venue:**
 
