@@ -79,3 +79,30 @@
 **What:** Added a paragraph to "What You'll Produce" giving students a rough expected document length (4-6 pages / 1500-2500 words) as a calibration aid. Updated `didactical-concept.md` with a new entry explaining the pedagogical reasoning.
 
 **Why:** Critical review of the exercise for level-appropriateness revealed that the exercise calibrates *depth* well (two worked examples, guiding questions per section) but gives no guidance on *breadth/volume*. For students encountering UX design for the first time, this gap creates two failure modes: under-writing (one vague paragraph per section, mistaking "addressed" for "specified") and over-writing (anxious prose that buries design decisions in filler). The page/word range is framed as a sanity check, not a target, and ties back to the quality bar ("shortest document a developer could build from"). The rest of the exercise was reviewed and found appropriate for the audience: the 8 core sections are manageable in 4-8 hours, the core/advanced split prevents overwhelm, and the worked examples set a clear bar without prescribing answers.
+
+## 2026-04-05g: Student persona testing and targeted improvements
+
+**Prompt:**
+
+> Start three subagents as student personas (struggling, average, strong). Each produces a solution and feedback report. Read the reports and improve the documents.
+
+**What:** Simulated three student personas completing the exercise (Luca/struggling, Nina/average, Amir/strong). Solutions are in `solution-basic/`, `solution-average/`, `solution-good/`. Based on cross-persona feedback analysis, made five targeted improvements to `exercise.md` and updated `didactical-concept.md`.
+
+**Changes made:**
+
+1. **Clarified companion seat bookability.** Added a business rule explicitly flagging companion seat bookability for non-accessibility users as an open design decision students must make and justify. (Raised by Nina and Amir — both were confused about whether companion seats are restricted.)
+
+2. **Clarified visual specificity expectation.** Added a paragraph in "What You'll Produce" explaining that "no mockups" means no Figma/wireframes, but students must still describe visual decisions (colors, sizes, icons) in words. (Raised by all three personas — the single most common confusion.)
+
+3. **Added seat state count hint.** Changed "think beyond just 'available' and 'booked'" to include "most real booking systems need at least five distinct states." (Raised by Luca and Nina — both were uncertain how many states to define.)
+
+4. **Added error case worked example.** Added a third worked example showing how to describe a hold timer expiration error. (Raised by all three personas — Section 7 was consistently the weakest section and students had no model for error descriptions.)
+
+5. **Added advanced requirements scope guidance.** Added a sentence clarifying that most students focus on core, and 1-2 advanced topics is a good stretch goal. (Raised by Luca and Amir — both uncertain about expectations.)
+
+**Quality spread observations from the simulation:**
+- Luca (~750 words): Too short, vague, copies exercise language. Validates that struggling students need more scaffolding — the added hints and examples address this.
+- Nina (~2000 words): Good structure, decent happy paths, thin on edge cases. Validates that the error worked example fills a real gap.
+- Amir (~2400 words): Thorough and precise, tackles advanced requirements. Validates that the exercise ceiling is high enough. His feedback on companion seat ambiguity was the most actionable.
+
+**Meta-level check:** All changes maintain the meta-level constraint. The new worked example shows depth/format for error descriptions without prescribing which errors to cover or how to handle them. The companion seat rule is framed as a decision to make, not an answer to adopt.

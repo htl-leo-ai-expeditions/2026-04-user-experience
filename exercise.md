@@ -37,6 +37,7 @@ Study the seating plan carefully. Every design decision you make should connect 
 
 - A booking can contain **1 to 6 seats**.
 - Wheelchair spaces can only be booked by users who indicate an accessibility need. Each wheelchair space must include at least one companion seat in the same booking.
+- Companion seats are physically adjacent to wheelchair spaces. Whether non-accessibility users can book companion seats as regular seats is a design decision you need to make and justify in your document.
 - Premium seats cost more than standard seats. The exact prices are: Standard CHF 16, Premium CHF 22, Wheelchair/Companion CHF 16.
 - A booking is not confirmed until the user completes the checkout step.
 - Seats are held for the user for **8 minutes** after selection. After that, they're released back to the pool.
@@ -49,6 +50,8 @@ A single UX design document (text-based, no graphical mockups required) that ful
 The quality bar: *Could a competent frontend developer build a working interactive prototype from your document alone, without needing to ask any clarifying questions about how the interface should look or behave?*
 
 If your answer is "probably not," your document isn't done yet.
+
+**Yes, you need to make visual decisions.** The exercise says "no graphical mockups required" — that means you don't need to create wireframes or Figma files. But you absolutely need to describe your visual design in words: which colors represent which states, how big elements are relative to each other, what icons or labels you use. Making these decisions and writing them down precisely *is* the exercise. Look at the worked examples to see what this looks like in practice.
 
 **How much should you write?** A solid core document typically runs 4-6 pages (roughly 1500-2500 words). That's not a target to hit for its own sake. It's a sanity check. If your document is one page, you're almost certainly too vague. If it's twelve pages, you're probably over-explaining things that a simple table or state list would handle better. Aim for the shortest document that a developer could actually build from. Every sentence should earn its place.
 
@@ -72,7 +75,16 @@ Here's a second example, this time for a **booking flow step**:
 > - **How constraints are enforced:** If the user selects a 7th seat, the click has no effect and a tooltip appears near the seat: "Maximum 6 seats per booking." If the user has indicated a wheelchair need (from the previous step), only wheelchair and companion seats are clickable. All other seats appear dimmed with reduced opacity (0.4) and show a "not available for your selection" tooltip on hover.
 > - **How the user leaves this step:** Clicks "Continue to checkout" (proceeds to the next step) or clicks the browser back button / a "Change showing" link above the seat map (returns to showing selection, seats are released).
 
-Two examples, two very different dimensions, same level of specificity. That's the bar for your entire document.
+And a third example, this time for an **error case**:
+
+> **Error: Hold timer expires during seat selection**
+>
+> - **What triggers it:** The user selected seats but did not proceed to checkout within 8 minutes. The server releases all held seats.
+> - **What the user sees:** A modal overlay appears (dark semi-transparent backdrop, white card centered). The heading reads "Your seat reservation has expired." The body text explains: "Your selected seats have been released because the 8-minute hold has expired. This keeps seats available for all customers." A single button reads "Choose seats again."
+> - **What the user can do:** Click the button. The modal closes, the seat map reloads with current availability, and all previously selected seats are deselected. The user can start selecting again.
+> - **What the user cannot do:** Dismiss the modal by clicking outside it or pressing Escape. They must acknowledge the expiry before continuing.
+
+Three examples, three very different dimensions, same level of specificity. That's the bar for your entire document.
 
 ## Core Requirements
 
@@ -92,7 +104,8 @@ Use this structure as a starting point for your design document. You can rename 
 
 3. Seat States
    Every possible state a seat can be in (think beyond just
-   "available" and "booked"). How each state looks visually.
+   "available" and "booked" — most real booking systems need
+   at least five distinct states). How each state looks visually.
    What triggers transitions between states.
    → For each state: could a developer implement it from your
      description alone, without guessing colors, icons, or borders?
@@ -137,7 +150,7 @@ Use this structure as a starting point for your design document. You can rename 
 
 ## Advanced Requirements
 
-Already solid on the core? These dimensions add depth to your design document. Pick the ones that interest you. They're grouped by effort so you can gauge what's realistic in your remaining time.
+Already solid on the core? These dimensions add depth to your design document. Pick the ones that interest you. They're grouped by effort so you can gauge what's realistic in your remaining time. Most students focus entirely on the core requirements. If your core document is solid and you have time left, trying one or two advanced topics is a good challenge.
 
 ### Quick wins (30-60 min each)
 
