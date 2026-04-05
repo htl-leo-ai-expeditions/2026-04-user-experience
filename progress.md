@@ -118,3 +118,19 @@ Updated `didactical-concept.md`:
 **Why:** The exercise-writing skill says "Templates Over Prose: Wherever students need to produce structured output, give them a copy-ready template (an empty table, a skeleton structure, a fill-in-the-blanks block)." The previous template told students *what* to write about but not *what shape* their output should take. Students seeing an empty table with labeled columns understand the expected granularity immediately: one row per state, one row per step, one row per error scenario. This is especially important for the error and edge cases section, where "be specific" is hard to act on without a visible structure that demands specifics (trigger, message, location, recovery). The scaffolds stay meta-level: they define columns and labels, not answers.
 
 **Files modified:** `exercise.md` (document template rewritten), `didactical-concept.md` (map + pitfall updated), `progress.md` (this entry)
+
+## 2026-04-05 — Persona testing: fix gaps found by simulated students
+
+**Prompt:** "Do a /persona-testing"
+
+**What was done:** Spawned three student personas (struggling, average, strong) to complete the exercise independently. Saved submissions to `solution-basic/`, `solution-average/`, `solution-good/`. Cross-persona analysis identified three issues raised by 2+ personas:
+
+1. **Error handling had no worked example.** The seat states have a detailed worked example, but the error section only had an empty template table. Both basic and average students produced vague error descriptions ("an error is shown") despite the exercise warning against it. **Fix:** Added a concrete vague-vs-specific comparison directly in the error dimension, showing what buildable error specification looks like.
+
+2. **Companion dual-nature missed by basic and average students.** The abstract design question ("How does your state model handle this dual nature?") wasn't concrete enough. **Fix:** Added a walk-through scenario to the design question: "a user selects a companion seat as a regular seat, then selects the adjacent wheelchair space — what happens to the companion seat?"
+
+3. **Undefined business rules caused silent guessing.** The strong student identified 5 genuine ambiguities (hold duration, premium pricing, wheelchair-as-companion, etc.) and documented assumptions. Basic and average students hit the same gaps but guessed silently. **Fix:** Added explicit guidance encouraging students to identify and document assumptions when they encounter undefined rules, rather than guessing silently.
+
+Updated `didactical-concept.md` with a new pitfall about silent assumptions.
+
+**Files modified:** `exercise.md` (3 targeted additions), `didactical-concept.md` (new pitfall), `solution-basic/submission.md` (new), `solution-average/submission.md` (new), `solution-good/submission.md` (new), `progress.md` (this entry)

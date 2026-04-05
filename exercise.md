@@ -88,7 +88,7 @@ Address all of these in your document. This is where the bulk of the work lives.
 - [ ] **Seat states and transitions**: Define every state a seat can be in. Describe the visual representation and what user actions are available in each state. Map the transitions between states. (The worked example above is one way to do this. You may structure yours differently.)
 
   Design questions to address:
-  - A companion seat can behave as a regular seat *or* as a linked accessibility seat depending on context. How does your state model handle this dual nature?
+  - A companion seat can behave as a regular seat *or* as a linked accessibility seat depending on context. How does your state model handle this dual nature? Walk through this scenario concretely: a user selects a companion seat as a regular seat. Then they select the adjacent wheelchair space. What happens to the companion seat's state, appearance, and behavior?
   - How does the user distinguish between a seat that is permanently sold and one that is temporarily held by another customer?
 
 - [ ] **Interaction design**: How does a user select a single seat? How does multi-select work for a group of up to 6? What happens visually during selection? What feedback confirms the action? How does deselection work?
@@ -111,11 +111,21 @@ Address all of these in your document. This is where the bulk of the work lives.
 
 - [ ] **Error and edge cases**: What happens if a seat becomes unavailable while the user is selecting? What if the user selects 7 seats (exceeding the limit)? What if a child ticket is added without an adult? How are errors communicated? Be specific: don't just say "an error is shown." Describe *what* the user sees, *where* it appears, and *what they can do about it*.
 
+  Here's an example of the specificity you need. Compare these two descriptions of the same error:
+
+  *Vague:* "If the user selects too many seats, an error is shown."
+
+  *Specific:* "When 6 seats are selected, remaining available seats become visually dimmed and non-interactive. Clicking a dimmed seat does nothing. The seat count indicator reads '6 / 6'. A tooltip appears near the rejected seat: 'Maximum 6 seats per booking. Deselect a seat to choose a different one.' The user deselects one of their current seats, which re-enables the remaining available seats."
+
+  The vague version leaves the developer guessing about *what* error, *where* it shows up, and *how* the user recovers. The specific version is buildable. Aim for the second version in every row of your error table.
+
   Design questions to address:
   - The user has spent two minutes carefully selecting 5 seats. Then one of them gets booked by someone else. How does the interface handle this without making the user start over?
   - A constraint violation (e.g., child without adult) could be caught at selection time or at confirmation time. When does your design catch it, and why is that the better moment?
 
 For all of these questions: there are no wrong answers, only undocumented ones. The skill is in deciding *and* explaining your reasoning.
+
+You will find that the venue rules above don't cover every situation. That's intentional. Real specs have gaps. When you hit an undefined rule (e.g., "what happens if...?" and nothing in this exercise tells you), don't just guess silently. State your assumption, explain why you chose it, and design consistently from there. A documented assumption is a design decision. An undocumented one is a bug waiting to happen.
 
 ### Advanced Dimensions (Stretch Goals)
 
