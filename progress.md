@@ -97,3 +97,24 @@ Updated `didactical-concept.md`:
 **Why:** After five additive iterations, the text had accumulated redundancy. "Document as prompt" appeared three times across sections. Tips echoed earlier instructions. Pitfalls explained both the problem and that the exercise addresses it (the teacher can see that). A polish pass at this stage prevents the exercise from feeling repetitive to students and the didactical concept from being unnecessarily long for teachers.
 
 **Files modified:** `exercise.md`, `didactical-concept.md`, `progress.md` (this entry)
+
+## 2026-04-05 — Replace prose placeholders with structured deliverable scaffolds
+
+**Prompt:** "Do one iteration. This time, focus on providing clear instructions about deliverables to students (e.g. empty tables, checklists, etc.)."
+
+**What was done:** Rewrote the Document Template section in `exercise.md`. The previous version had italicized prose placeholders (e.g., "*[Define every state a seat can be in...]*"). The new version provides concrete, copy-ready scaffolds for each section:
+
+- **Conventions**: table with one row per convention to define
+- **Seat States and Transitions**: two tables (one for states with columns for visual description, interactivity, and click behavior; one for transitions with from/to/trigger columns)
+- **Interaction Design**: bullet list with labeled interaction types to describe
+- **Booking Flow**: step-by-step table with columns for what the user sees, does, and what data is involved; plus a prompt to mark the commit point
+- **Accessibility**: labeled bullet list covering discovery, pairing, constraint communication, and fallback behavior
+- **Error and Edge Cases**: table with columns for scenario, trigger, message, location, and recovery action; pre-seeded with three example scenario names to reduce blank-page paralysis
+
+Updated `didactical-concept.md`:
+- Refined the template row in the requirement-to-objective map to mention structured scaffolds
+- Expanded the "template as sufficient scope" pitfall to note that empty tables set a minimum granularity
+
+**Why:** The exercise-writing skill says "Templates Over Prose: Wherever students need to produce structured output, give them a copy-ready template (an empty table, a skeleton structure, a fill-in-the-blanks block)." The previous template told students *what* to write about but not *what shape* their output should take. Students seeing an empty table with labeled columns understand the expected granularity immediately: one row per state, one row per step, one row per error scenario. This is especially important for the error and edge cases section, where "be specific" is hard to act on without a visible structure that demands specifics (trigger, message, location, recovery). The scaffolds stay meta-level: they define columns and labels, not answers.
+
+**Files modified:** `exercise.md` (document template rewritten), `didactical-concept.md` (map + pitfall updated), `progress.md` (this entry)

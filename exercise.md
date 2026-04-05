@@ -137,7 +137,7 @@ These extend your document's depth. Tackle them if you finish the core dimension
 
 ## Document Template
 
-Copy this skeleton into a new file and fill in every section. You can rename sections, add subsections, or restructure, but every topic must be addressed somewhere in your final document.
+Copy this skeleton into a new file and fill in every section. The tables and structures below show you *what* to produce and at what granularity. You can rename sections, add subsections, or restructure, but every topic must be addressed somewhere in your final document.
 
 ---
 
@@ -145,29 +145,68 @@ Copy this skeleton into a new file and fill in every section. You can rename sec
 
 **1. Conventions**
 
-- Seat naming scheme: *[define how you refer to individual seats, e.g. "Row C, Seat 4" or "C4"]*
-- Visual state vocabulary: *[define the terms you use to describe how things look, e.g. "highlighted", "muted", "prominent"]*
-- Interaction vocabulary: *[define the terms you use for user actions, e.g. "click", "tap", "select", "hover"]*
+| Convention | Your definition |
+|---|---|
+| Seat naming scheme | *[How do you refer to individual seats? e.g., "Row C, Seat 4" or "C4"]* |
+| Visual state vocabulary | *[What terms do you use to describe how things look? e.g., "highlighted", "muted", "prominent"]* |
+| Interaction vocabulary | *[What terms do you use for user actions? e.g., "click", "tap", "select", "hover"]* |
 
 **2. Seat States and Transitions**
 
-*[Define every state a seat can be in. For each state: describe how it looks and what the user can do with it. Then list the transitions between states and what triggers each one.]*
+One row per state. Add or remove rows as needed.
+
+| State | Visual description | Can the user interact? | What happens on click/tap? |
+|---|---|---|---|
+| *[state name]* | *[how it looks]* | *[yes/no]* | *[what the interaction does, or why it's disabled]* |
+| *[state name]* | | | |
+| *[...]* | | | |
+
+Then list each transition:
+
+| From | To | Trigger |
+|---|---|---|
+| *[state]* | *[state]* | *[what causes this transition]* |
+| *[...]* | | |
 
 **3. Interaction Design**
 
-*[How does the user select a single seat? How does multi-select work for groups? What visual feedback confirms the action? How does deselection work? How does the interface help a group find adjacent seats?]*
+Describe each interaction. For each one, cover: what the user does, what the interface shows during the action, and what confirms the action is complete.
+
+- **Single seat selection:** *[describe]*
+- **Multi-select (group):** *[describe]*
+- **Deselection:** *[describe]*
+- **Swapping a seat at the maximum:** *[describe]*
+- **Finding adjacent seats for a group:** *[describe]*
 
 **4. Booking Flow**
 
-*[Map the complete journey from "user sees the seating plan" to "booking confirmed." List each step, what information is shown or collected, and where the decision points are.]*
+One row per step, in order. Add as many steps as your flow needs.
+
+| Step | What the user sees | What the user does | What information is collected or shown |
+|---|---|---|---|
+| 1 | *[describe the screen/state]* | *[describe the action]* | *[what data is displayed or entered]* |
+| 2 | | | |
+| *[...]* | | | |
+
+Mark the commit point: at which step does the booking become final? Why did you place it there?
 
 **5. Accessibility and Special Requirements**
 
-*[How does a user who needs a wheelchair space find and book one? How does the companion seat pairing work in the interface? How are constraints communicated before the user runs into them?]*
+- **Discovering wheelchair spaces:** *[How does a user who needs a wheelchair space find available options?]*
+- **Companion seat pairing:** *[What happens in the UI when a wheelchair space is selected? How is the companion seat linked?]*
+- **Constraint communication:** *[How does the interface prevent mistakes before they happen, rather than showing errors after?]*
+- **Booking as a regular seat:** *[When no wheelchair space is booked, how do companion seats behave?]*
 
 **6. Error and Edge Cases**
 
-*[For each error scenario: what triggers it, what the user sees, where the message appears, and what the user can do about it. Don't just write "an error is shown."]*
+One row per error scenario. Don't leave any column blank.
+
+| Scenario | Trigger | What the user sees | Where it appears | What the user can do |
+|---|---|---|---|---|
+| *[e.g., seat becomes unavailable mid-selection]* | *[what causes it]* | *[exact message or visual change]* | *[where on screen]* | *[recovery action]* |
+| *[e.g., max tickets exceeded]* | | | | |
+| *[e.g., child ticket without adult]* | | | | |
+| *[add your own scenarios]* | | | | |
 
 ---
 
