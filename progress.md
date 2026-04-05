@@ -106,3 +106,20 @@
 - Amir (~2400 words): Thorough and precise, tackles advanced requirements. Validates that the exercise ceiling is high enough. His feedback on companion seat ambiguity was the most actionable.
 
 **Meta-level check:** All changes maintain the meta-level constraint. The new worked example shows depth/format for error descriptions without prescribing which errors to cover or how to handle them. The companion seat rule is framed as a decision to make, not an answer to adopt.
+
+## 2026-04-05h: Add feedback report prompt for teacher use
+
+**Prompt:**
+
+> Write a `report-prompt.md` file that contains a prompt that teachers can later use to generate feedback reports for students. The agent that will generate the report will receive all documents including that report-prompt.md file. The goal of the `report-prompt.md` file is that multiple agents generating feedback reports for different students come up with similar reports. The tonality, the structure, the level of detail, etc. should be similar across different agents. There MUST NOT be AI-based grading. The feedback reports should be qualitative and descriptive, not quantitative. Grades and/or points are later given by human teachers.
+
+**What:** Created `report-prompt.md` — a structured prompt that agents use to generate qualitative feedback reports for student submissions.
+
+**Why:** Teachers need consistent, descriptive feedback across all student submissions. By giving agents a fixed report structure (7 sections), explicit tone rules (descriptive not evaluative, specific not vague), and hard constraints (no grades, no comparisons, no rewriting), the prompt ensures that reports from different agents are comparable in structure, depth, and tone. This lets human teachers read reports side by side and apply their own grading without being influenced by AI-assigned scores or evaluative language.
+
+**Key design decisions:**
+- Fixed 7-section structure ensures every report covers the same dimensions in the same order.
+- Tone rules ban superlatives, hedging, and judgment words — forcing factual, citation-based observations.
+- Explicit "must not" list prevents grading, student comparison, and content generation on behalf of the student.
+- Each section has a target length (sentence or bullet count) to keep reports concise and comparable.
+- The quality bar from the exercise ("could a developer build this?") is carried through as the lens for all feedback.
