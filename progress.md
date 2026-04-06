@@ -164,3 +164,28 @@ Disambiguate row mode's "consecutive seats without gaps" requirement in the cont
 - exercise.md (row mode requirement, document template)
 - didactical-concept.md (likely student difficulties)
 - progress.md (this entry)
+
+## Iteration 8
+
+**Prompt:**  
+Identify the highest-priority improvement and apply it.
+
+**Focus:**  
+Split conflict handling into two distinct scenarios. The requirements section only covered the checkout conflict (user confirms seats that were just reserved by someone else) but ignored the mid-selection conflict (a seat the user already selected gets reserved by another user while the user is still picking seats). The template prompt was broader ("seats become unavailable after the user selected them") but the requirements did not match it. This is a priority 2 issue (ambiguity and incomplete requirements in a core section).
+
+**Changes made:**  
+- In exercise.md, restructured the conflict handling requirements into two labeled scenarios: "During selection" (seat lost while user is still picking) and "At checkout" (seats lost at confirmation time), each with specific questions students must answer.
+- In exercise.md, updated the document template comment for the conflict handling section to list both scenarios explicitly.
+- In exercise.md, updated the self-check question about conflict handling to reference both scenarios.
+- In didactical-concept.md, added a new likely difficulty entry ("Conflating the two conflict scenarios") explaining that students will typically only describe the checkout conflict and need to be pushed to separate the two cases.
+- In didactical-concept.md, updated the teacher cue about conflict handling to mention that strong docs distinguish the mid-selection conflict from the checkout conflict.
+
+**Why:**  
+- The original requirements treated conflict handling as a single scenario (checkout time), but real-time seat updates create a second, distinct conflict: a selected seat disappearing from the user's selection while they are still browsing. This mid-selection case affects different parts of the UI (seating plan state, shopping cart, possibly a notification) and requires different design decisions than the checkout case.
+- Without the split, students who write one "conflict" paragraph covering only the checkout case appear to have complete work. Making both scenarios explicit in the requirements ensures students and teachers both attend to the subtler case.
+- The template and self-check are now aligned with the restructured requirements.
+
+**Files modified:**  
+- exercise.md (conflict handling requirements, document template, self-check)
+- didactical-concept.md (likely student difficulties, teacher cues)
+- progress.md (this entry)

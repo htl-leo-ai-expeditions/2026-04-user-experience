@@ -92,9 +92,16 @@ Describe how switching between modes works. What happens to already-selected sea
 
 ### Conflict handling
 
-Multiple users see the seating plan at the same time. Seats reserved by others update in real time. Still, two users might click the same seat at nearly the same time.
+Multiple users see the seating plan at the same time. Seats reserved by others update in real time. Two conflict scenarios can occur:
 
-- Describe what happens when a user tries to confirm seats that were just reserved by someone else
+**During selection:** A seat the user has already selected gets reserved by another user before the current user goes to checkout.
+
+- What happens to the user's selection of that seat?
+- How is the user notified?
+- What happens to the shopping cart?
+
+**At checkout:** The user tries to confirm a reservation, but one or more selected seats were reserved by someone else in the meantime.
+
 - What message does the user see?
 - What is the recovery flow? (Back to seat selection? Automatic suggestion of alternatives?)
 
@@ -147,8 +154,10 @@ Use this section outline for your UX design document. Copy it and fill in every 
      State what information the confirmation screen shows. -->
 
 ## Conflict handling
-<!-- Describe what happens when seats become unavailable after the user selected them.
-     Cover: message, state of the user's selection, and recovery flow. -->
+<!-- Cover both conflict scenarios:
+     1. During selection: a seat the user already selected gets reserved by someone else.
+     2. At checkout: selected seats are no longer available when the user confirms.
+     For each: what the user sees, what happens to their selection, and how they continue. -->
 
 ## Advanced: [your chosen extension]
 <!-- Only if you chose an advanced requirement. -->
@@ -174,7 +183,7 @@ Go through these questions before you hand in your document. Every answer should
 
 - Does your document clearly separate seat types from seat states, and describe what triggers each transition between states?
 - Can a developer implement the companion seat rule from your description alone, without guessing what should happen in any case?
-- Is the conflict handling flow complete: what the user sees, what happens to their selection, and how they continue?
+- Does your conflict handling cover both scenarios: a seat lost during selection and seats lost at checkout? For each, is it clear what the user sees, what happens to their selection, and how they continue?
 - Did you describe both booking modes, including what happens to already-selected seats when the user switches modes?
 - Did you specify where the film, date, and showtime information appears on the screen?
 - Does the shopping cart section state exactly what information is shown per seat and how the total is calculated?

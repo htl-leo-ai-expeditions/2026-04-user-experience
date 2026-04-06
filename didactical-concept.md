@@ -20,6 +20,7 @@ This exercise trains precise specification writing, not coding and not visual de
 - **Conflating types and states:** Students will mix seat types (regular, premium, wheelchair, companion) with seat states (available, selected, reserved). These are orthogonal dimensions. A wheelchair seat can be available, selected, or reserved. Push students to model them separately: types are fixed properties of a seat; states change during a session.
 - **Too vague on states:** Students will write "the seat changes color" instead of defining named states and transitions. Push them toward explicit state names and transition triggers.
 - **Ignoring edge cases:** Companion seat logic and conflict handling will be underspecified. Students tend to describe the happy path only. The companion seat rule has two directions: selecting the companion without the wheelchair seat, and deselecting the wheelchair seat while the companion is still selected. Many students will cover only the first.
+- **Conflating the two conflict scenarios:** Conflict handling has two distinct cases: (1) a seat the user already selected gets reserved by someone else during selection, and (2) seats are lost at checkout confirmation time. Most students will only describe the checkout conflict because it is the more dramatic moment. The mid-selection conflict is subtler but equally important: it affects the shopping cart, the seating plan display, and possibly the user's awareness. Push students who write a single "conflict" paragraph to separate the two cases and describe each completely.
 - **Mixing visual design into the doc:** Some students will start specifying colors, fonts, CSS. Redirect to interaction logic.
 - **Booking mode switch:** Students often forget to describe what happens to current selections when switching modes.
 - **Row mode and aisles:** In row mode the system must find "consecutive seats without gaps," but aisles split each row into three sections (3-8-3). Students must decide whether consecutive seats can span an aisle or must stay within one section. Many will overlook this entirely because they think of each row as a flat list of 14 seats. Push them to state their rule explicitly and consider what happens when the requested group size exceeds a single section.
@@ -29,7 +30,7 @@ This exercise trains precise specification writing, not coding and not visual de
 
 - A good document reads like a decision tree: for each user action, the outcome is unambiguous.
 - Look for completeness of state definitions. Missing states = missing spec.
-- The conflict handling section is the strongest signal of spec quality. Weak docs say "show an error". Strong docs describe the full recovery flow.
+- The conflict handling section is the strongest signal of spec quality. Weak docs say "show an error." Strong docs distinguish the mid-selection conflict from the checkout conflict and describe the full recovery flow for each.
 
 ## Document template and worked example
 
