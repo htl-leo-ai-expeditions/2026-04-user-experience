@@ -47,3 +47,26 @@ Create the seating plan visualization. This is a missing essential project file 
 - seating-plan.png (new, derived)
 - exercise.md (updated image reference)
 - progress.md (this entry)
+
+## Iteration 3
+
+**Prompt:**  
+Identify the highest-priority improvement and apply it. Look for contradictions/ambiguity, self-check TODOs, missing scaffolds, or other gaps.
+
+**Focus:**  
+Flesh out the self-check section. It contained a TODO placeholder comment indicating it was unfinished, and the existing questions were somewhat vague. This is a priority 2-3 issue (incomplete content / unclear requirements).
+
+**Changes made:**  
+- Removed the `<!-- TODO: flesh out with concrete yes/no questions -->` comment.
+- Added an introductory line telling students every answer should be "yes."
+- Rewrote all five existing questions to be more specific and testable (e.g., "define every seat state" became "name every seat state and describe what triggers each transition").
+- Added two new self-check questions: one for shopping cart completeness (what info per seat, how total is calculated) and one that catches visual-design leakage (the "remove all colors/fonts" test).
+
+**Why:**  
+- The TODO comment signaled unfinished work. Leaving it in creates ambiguity about whether the section is ready to use.
+- The writing guide requires self-check questions to be "concrete and testable." The original questions were directionally correct but not precise enough for students to verify their own work reliably.
+- The two new questions cover gaps: shopping cart detail level was a core requirement with no self-check coverage, and the visual-design boundary is a key exercise constraint that students commonly violate (noted in didactical-concept.md).
+
+**Files modified:**  
+- exercise.md (self-check section rewritten)
+- progress.md (this entry)

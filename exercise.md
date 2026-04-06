@@ -111,10 +111,12 @@ Pick one or more of these to extend your document:
 
 ## Self-check before submission
 
-<!-- TODO: flesh out with concrete yes/no questions -->
+Go through these questions before you hand in your document. Every answer should be "yes."
 
-- Does your document define every seat state and the transitions between them?
-- Can a developer implement the companion seat rule from your description alone, without guessing?
-- Is the conflict handling flow complete, including the error message and recovery?
-- Did you describe both booking modes and the switch between them?
-- Did you specify where the film/date/time information appears?
+- Does your document name every seat state and describe what triggers each transition between states?
+- Can a developer implement the companion seat rule from your description alone, without guessing what should happen in any case?
+- Is the conflict handling flow complete: what the user sees, what happens to their selection, and how they continue?
+- Did you describe both booking modes, including what happens to already-selected seats when the user switches modes?
+- Did you specify where the film, date, and showtime information appears on the screen?
+- Does the shopping cart section state exactly what information is shown per seat and how the total is calculated?
+- If you removed all mention of colors, fonts, and sizes from your document, would it still be complete? (It should be. If not, you mixed in visual design.)
