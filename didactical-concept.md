@@ -24,7 +24,7 @@ This exercise trains precise specification writing, not coding and not visual de
 - **Mixing visual design into the doc:** Some students will start specifying colors, fonts, CSS. Redirect to interaction logic.
 - **Booking mode switch:** Students often forget to describe what happens to current selections when switching modes.
 - **Row mode and aisles:** In row mode the system must find "consecutive seats without gaps," but aisles split each row into three sections (3-8-3). Students must decide whether consecutive seats can span an aisle or must stay within one section. Many will overlook this entirely because they think of each row as a flat list of 14 seats. Push them to state their rule explicitly and consider what happens when the requested group size exceeds a single section.
-- **Confusing "what" and "how":** Students may describe implementation details (WebSocket, polling) instead of user-visible behavior.
+- **Confusing "what" and "how":** Students may describe implementation details (WebSocket, polling) instead of user-visible behavior. The exercise now explicitly tells students to describe what the user sees, not how the system implements it. Despite this, expect the conflict handling and real-time sync sections to attract technical language. When reviewing, ask: "Could a non-technical product owner understand this sentence?" If not, the student slipped into implementation.
 
 ## Teacher cues
 

@@ -189,3 +189,27 @@ Split conflict handling into two distinct scenarios. The requirements section on
 - exercise.md (conflict handling requirements, document template, self-check)
 - didactical-concept.md (likely student difficulties, teacher cues)
 - progress.md (this entry)
+
+## Iteration 9
+
+**Prompt:**  
+Identify the highest-priority improvement and apply it.
+
+**Focus:**  
+Add explicit guidance against implementation details in the exercise. The didactical concept already identified "Confusing 'what' and 'how'" as a likely student difficulty, but the exercise itself only guarded against visual design leakage (colors, fonts, CSS), not against implementation detail leakage (WebSocket, polling, HTTP). This is a priority 5 issue (misalignment between exercise.md and didactical-concept.md) combined with a priority 3 issue (makes the exercise harder to solve correctly, especially in conflict handling and real-time sync sections).
+
+**Changes made:**  
+- In exercise.md, renamed the focus section heading to "Focus: interaction logic, not visual design or implementation" to reflect the broader boundary.
+- In exercise.md, added a new bullet to the focus section: "Describe what the user sees and does, not how the system implements it" with a concrete before/after example.
+- In exercise.md, added a self-check question asking whether the document avoids specifying technologies, protocols, or implementation mechanisms.
+- In didactical-concept.md, expanded the "Confusing 'what' and 'how'" difficulty entry to reference the new exercise guidance and to give teachers a concrete review heuristic ("Could a non-technical product owner understand this sentence?").
+
+**Why:**  
+- The exercise had an asymmetric boundary: it explicitly warned against visual design leakage (with a bullet, an example, and a self-check question) but said nothing about implementation detail leakage. The didactical concept flagged this as a known student difficulty, but without a corresponding guard in the exercise, students had no signal that writing "the server pushes updates via WebSocket" is out of scope.
+- Conflict handling and real-time sync are the sections most likely to attract technical language. Without explicit guidance, even students who correctly avoid colors and fonts will slip into describing protocols and data flow instead of user-visible behavior.
+- The fix adds a parallel guard (bullet + self-check) that matches the existing visual design boundary in structure and specificity.
+
+**Files modified:**  
+- exercise.md (focus section heading, new bullet, new self-check question)
+- didactical-concept.md (expanded "Confusing what and how" difficulty)
+- progress.md (this entry)

@@ -27,12 +27,13 @@ A single UX design document covering the seat selection and checkout flow for Ki
 - User accounts or authentication
 - Admin views
 
-## Focus: interaction logic, not visual design
+## Focus: interaction logic, not visual design or implementation
 
 Your document describes UI/UX logic: what screens exist, what elements are on each screen, what states those elements can be in, what happens when the user interacts with them, and what happens on errors or edge cases.
 
 - Name visual states (e.g., "available", "selected", "reserved-by-others", "wheelchair-companion-locked"). Do not specify colors, fonts, sizes, or pixel values.
 - Describe screen layout in terms of regions and their relationships (e.g., "seating plan on the left, shopping cart on the right"). Do not create Figma mockups or detailed wireframes.
+- Describe what the user sees and does, not how the system implements it. Write "seats reserved by others update in real time" instead of "the server pushes updates via WebSocket." Technology choices (polling, WebSockets, HTTP) are implementation decisions that come later.
 - Visual design (colors, typography, CSS) is a separate step that comes later.
 
 ## The cinema: Kino Stella
@@ -188,3 +189,4 @@ Go through these questions before you hand in your document. Every answer should
 - Did you specify where the film, date, and showtime information appears on the screen?
 - Does the shopping cart section state exactly what information is shown per seat and how the total is calculated?
 - If you removed all mention of colors, fonts, and sizes from your document, would it still be complete? (It should be. If not, you mixed in visual design.)
+- Does your document describe only what the user sees and does, without specifying technologies, protocols, or implementation mechanisms?
