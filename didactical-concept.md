@@ -8,7 +8,7 @@ This exercise trains precise specification writing, not coding and not visual de
 
 | Requirement | What it trains |
 |---|---|
-| Seat states and transitions | Thinking in state machines; exhaustive enumeration |
+| Seat types vs. states and transitions | Thinking in state machines; separating orthogonal dimensions; exhaustive enumeration |
 | Companion seat rule | Describing conditional logic precisely |
 | Booking modes + switching | Handling mode-dependent behavior and state reset |
 | Shopping cart sync | Specifying derived/computed UI behavior |
@@ -17,6 +17,7 @@ This exercise trains precise specification writing, not coding and not visual de
 
 ## Likely student difficulties
 
+- **Conflating types and states:** Students will mix seat types (regular, premium, wheelchair, companion) with seat states (available, selected, reserved). These are orthogonal dimensions. A wheelchair seat can be available, selected, or reserved. Push students to model them separately: types are fixed properties of a seat; states change during a session.
 - **Too vague on states:** Students will write "the seat changes color" instead of defining named states and transitions. Push them toward explicit state names and transition triggers.
 - **Ignoring edge cases:** Companion seat logic and conflict handling will be underspecified. Students tend to describe the happy path only.
 - **Mixing visual design into the doc:** Some students will start specifying colors, fonts, CSS. Redirect to interaction logic.

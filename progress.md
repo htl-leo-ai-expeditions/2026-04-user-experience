@@ -94,3 +94,28 @@ Add a document template (section skeleton) and a worked example fragment to exer
 - exercise.md (added document template and worked example sections)
 - didactical-concept.md (added template/example guidance section)
 - progress.md (this entry)
+
+## Iteration 5
+
+**Prompt:**  
+Identify the highest-priority improvement and apply it.
+
+**Focus:**  
+Disambiguate seat types from seat states. The exercise listed "wheelchair" and "companion-locked" alongside "available", "selected", and "reserved" in a single flat list of seat states, conflating two orthogonal dimensions: seat type (a fixed property) and seat state (changes during a session). This is a priority 2 issue (ambiguity) that would lead students to produce confused state models.
+
+**Changes made:**  
+- In exercise.md, rewrote the seat states bullet to explicitly separate types (regular, premium, wheelchair, companion) from states (available, selected, reserved, companion-locked), explaining they are two independent dimensions.
+- Updated the document template section: renamed "Seat states" to "Seat types and states" and added a comment prompt reminding students to model them separately.
+- Updated the self-check question about states to also ask whether types and states are clearly separated.
+- In didactical-concept.md, updated the requirement-to-learning map entry to reflect the type/state separation as a learning objective (separating orthogonal dimensions).
+- Added a new likely difficulty entry about students conflating types and states, with a concrete teacher intervention note.
+
+**Why:**  
+- The original list ("available, selected, reserved, wheelchair, companion-locked") mixed fixed properties with dynamic states. A student reading this could reasonably model "wheelchair" as a state rather than a type, producing a state machine where a seat transitions into being a wheelchair seat, which is nonsensical.
+- Separating types from states is a transferable modeling skill (it maps directly to the distinction between entity attributes and entity states in database and object design, which these students already know from relational databases).
+- The fix makes the exercise requirement more precise without adding complexity or reducing student decision space.
+
+**Files modified:**  
+- exercise.md (seat states bullet, document template, self-check)
+- didactical-concept.md (requirement-to-learning map, likely difficulties)
+- progress.md (this entry)

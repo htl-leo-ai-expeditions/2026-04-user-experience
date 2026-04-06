@@ -39,16 +39,14 @@ Your document describes UI/UX logic: what screens exist, what elements are on ea
 
 ![Kino Stella seating plan](seating-plan.png)
 
-<!-- Students derive all seating details from the image. No written seat counts or row details are given in the text. -->
-
 **Seat types and pricing** (fixed, not dependent on film or showtime):
 
-| Seat type | Price |
-|---|---|
-| Regular | 8.50 EUR |
-| Premium | 12.00 EUR |
-| Wheelchair | 8.50 EUR |
-| Companion (next to wheelchair) | 8.50 EUR |
+| Seat type                      |     Price |
+| ------------------------------ | --------: |
+| Regular                        |  8.50 EUR |
+| Premium                        | 12.00 EUR |
+| Wheelchair                     |  8.50 EUR |
+| Companion (next to wheelchair) |  8.50 EUR |
 
 - The cinema has a single screen, with two aisles running from front to back, dividing the seats into three sections.
 - Some seats are premium seats (more expensive, better position).
@@ -64,7 +62,7 @@ Your UX design document must cover all of the following:
 ### Seating plan interaction
 
 - Interactive seating plan showing all seats with their current state
-- Seat states your document must define: available, selected (by current user), reserved (by another user), wheelchair, companion-locked, and any others you identify
+- Every seat has a type (regular, premium, wheelchair, companion) and a state. These are two separate dimensions: a wheelchair seat can be available, selected, or reserved, just like a regular seat. Seat states your document must define: available, selected (by current user), reserved (by another user), companion-locked (companion seat when its wheelchair seat is not selected), and any others you identify
 - Clicking/tapping a seat selects or deselects it
 - The companion seat rule: describe exactly what happens when a user tries to book the companion seat without the wheelchair seat, and vice versa
 - Group size limit of 6: what happens when the user tries to select a 7th seat?
@@ -123,11 +121,13 @@ Use this section outline for your UX design document. Copy it and fill in every 
 <!-- Describe the layout in terms of regions and their spatial relationships.
      Do not specify colors, fonts, or pixel values. -->
 
-## Seat states
-<!-- List every seat state. For each state, describe:
+## Seat types and states
+<!-- Seat types (regular, premium, wheelchair, companion) and seat states are two
+     separate dimensions. List every state a seat can be in. For each state, describe:
      - what the user sees (in terms of visual distinction, not specific colors)
      - what triggers the transition into this state
-     - what transitions are possible out of this state -->
+     - what transitions are possible out of this state
+     Note which states are specific to certain seat types (e.g., companion-locked). -->
 
 ## Seating plan interaction
 <!-- Describe what happens when the user clicks/taps a seat in each state.
@@ -171,7 +171,7 @@ This example shows three things: (1) every user action has a defined outcome, (2
 
 Go through these questions before you hand in your document. Every answer should be "yes."
 
-- Does your document name every seat state and describe what triggers each transition between states?
+- Does your document clearly separate seat types from seat states, and describe what triggers each transition between states?
 - Can a developer implement the companion seat rule from your description alone, without guessing what should happen in any case?
 - Is the conflict handling flow complete: what the user sees, what happens to their selection, and how they continue?
 - Did you describe both booking modes, including what happens to already-selected seats when the user switches modes?
