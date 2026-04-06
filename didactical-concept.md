@@ -1,0 +1,34 @@
+# Didactical Concept: Cinema Seat Reservation UX Document
+
+## Exercise intent
+
+This exercise trains precise specification writing, not coding and not visual design. Students must describe interaction logic, states, transitions, and edge cases concretely enough that an AI coding agent or experienced developer can implement without questions. The cinema domain is familiar enough that students can reason about it from experience, but complex enough (real-time sync, linked seats, booking modes) to expose gaps in vague specifications.
+
+## Requirement-to-learning map
+
+| Requirement | What it trains |
+|---|---|
+| Seat states and transitions | Thinking in state machines; exhaustive enumeration |
+| Companion seat rule | Describing conditional logic precisely |
+| Booking modes + switching | Handling mode-dependent behavior and state reset |
+| Shopping cart sync | Specifying derived/computed UI behavior |
+| Conflict handling | Reasoning about concurrency at the UX level |
+| Seating plan from image | Extracting specs from visual sources (no spoon-feeding) |
+
+## Likely student difficulties
+
+- **Too vague on states:** Students will write "the seat changes color" instead of defining named states and transitions. Push them toward explicit state names and transition triggers.
+- **Ignoring edge cases:** Companion seat logic and conflict handling will be underspecified. Students tend to describe the happy path only.
+- **Mixing visual design into the doc:** Some students will start specifying colors, fonts, CSS. Redirect to interaction logic.
+- **Booking mode switch:** Students often forget to describe what happens to current selections when switching modes.
+- **Confusing "what" and "how":** Students may describe implementation details (WebSocket, polling) instead of user-visible behavior.
+
+## Teacher cues
+
+- A good document reads like a decision tree: for each user action, the outcome is unambiguous.
+- Look for completeness of state definitions. Missing states = missing spec.
+- The conflict handling section is the strongest signal of spec quality. Weak docs say "show an error". Strong docs describe the full recovery flow.
+
+## Core vs. advanced boundary
+
+Core delivers a complete, implementable document for a single booking mode with basic conflict handling. Advanced requirements each add one independent dimension of complexity. Students can pick based on interest. The advanced tasks are designed so they don't require each other.
