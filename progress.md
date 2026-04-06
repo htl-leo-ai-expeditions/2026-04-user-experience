@@ -213,3 +213,26 @@ Add explicit guidance against implementation details in the exercise. The didact
 - exercise.md (focus section heading, new bullet, new self-check question)
 - didactical-concept.md (expanded "Confusing what and how" difficulty)
 - progress.md (this entry)
+
+## Iteration 10
+
+**Prompt:**  
+Scrutinize everything related to wheelchair seats and companion seats. Look for ambiguities, weak phrasing, unclear expectations, and missing edge cases.
+
+**Focus:**  
+Clarify the relationship between row mode and wheelchair seats. The exercise described row mode (consecutive seats in a preferred row) and wheelchair seats (row W with companion logic) as separate concerns, but never addressed their intersection. Row W has a fundamentally different structure from regular rows (only 4 seats, sparse layout, companion seat rule), yet the exercise did not prompt students to decide whether row mode should include or exclude it. This is a priority 2 issue (ambiguity in a core requirement interaction).
+
+**Changes made:**  
+- In exercise.md, added a sentence to the row mode requirement asking students to state whether row mode includes or excludes the wheelchair row and to justify their decision.
+- In exercise.md, added a clarifying sentence to pick mode confirming that wheelchair and companion seats are always selectable in pick mode (subject to companion seat rule).
+- In exercise.md, updated the document template comment for booking modes to mention the wheelchair row decision.
+- In didactical-concept.md, added a new likely difficulty entry ("Wheelchair row in row mode") explaining the structural mismatch and the two valid approaches (include with reconciled companion logic, or exclude with explicit statement).
+
+**Why:**  
+- Row W does not fit the row mode model: it has only 4 seats scattered across two sections with empty positions between them, and W4 has a companion seat constraint. Without prompting, students will either silently ignore row W in their row mode description (producing an incomplete spec) or try to include it without addressing the companion seat conflict (producing an inconsistent spec). Either way, a developer implementing the spec would have to guess.
+- The fix does not pre-solve the decision. It makes students aware that the interaction between row mode and the wheelchair row requires an explicit design decision, and asks them to state and justify their choice.
+
+**Files modified:**  
+- exercise.md (row mode requirement, pick mode requirement, document template)
+- didactical-concept.md (new likely difficulty entry)
+- progress.md (this entry)

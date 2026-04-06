@@ -72,8 +72,8 @@ Your UX design document must cover all of the following:
 
 Two modes the user can switch between:
 
-- **Row mode:** Select a number of seats and a preferred row. The system finds consecutive seats without gaps. Remember that aisles divide each row into three sections. Define what "consecutive without gaps" means in relation to aisles. Describe what happens if no consecutive block is available.
-- **Pick mode:** Select each seat individually by clicking on the seating plan.
+- **Row mode:** Select a number of seats and a preferred row. The system finds consecutive seats without gaps. Remember that aisles divide each row into three sections. Define what "consecutive without gaps" means in relation to aisles. Describe what happens if no consecutive block is available. The wheelchair row has a different layout from regular rows (fewer seats, companion seat logic). State whether row mode includes or excludes the wheelchair row, and why.
+- **Pick mode:** Select each seat individually by clicking on the seating plan. Wheelchair seats, including companion seats, are always selectable in pick mode (subject to the companion seat rule).
 
 Describe how switching between modes works. What happens to already-selected seats?
 
@@ -143,7 +143,8 @@ Use this section outline for your UX design document. Copy it and fill in every 
 
 ## Booking modes
 <!-- Describe row mode and pick mode separately.
-     For row mode, define how aisles affect consecutive seat selection.
+     For row mode, define how aisles affect consecutive seat selection
+     and state whether the wheelchair row is included or excluded.
      State what happens when the user switches between modes. -->
 
 ## Shopping cart
