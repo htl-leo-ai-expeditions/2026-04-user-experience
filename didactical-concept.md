@@ -22,6 +22,7 @@ This exercise trains precise specification writing, not coding and not visual de
 - **Ignoring edge cases:** Companion seat logic and conflict handling will be underspecified. Students tend to describe the happy path only. The companion seat rule has two directions: selecting the companion without the wheelchair seat, and deselecting the wheelchair seat while the companion is still selected. Many students will cover only the first.
 - **Mixing visual design into the doc:** Some students will start specifying colors, fonts, CSS. Redirect to interaction logic.
 - **Booking mode switch:** Students often forget to describe what happens to current selections when switching modes.
+- **Row mode and aisles:** In row mode the system must find "consecutive seats without gaps," but aisles split each row into three sections (3-8-3). Students must decide whether consecutive seats can span an aisle or must stay within one section. Many will overlook this entirely because they think of each row as a flat list of 14 seats. Push them to state their rule explicitly and consider what happens when the requested group size exceeds a single section.
 - **Confusing "what" and "how":** Students may describe implementation details (WebSocket, polling) instead of user-visible behavior.
 
 ## Teacher cues

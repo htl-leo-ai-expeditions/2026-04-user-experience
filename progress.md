@@ -142,3 +142,25 @@ Resolve ambiguous companion seat rule terminology. The cinema description used "
 - exercise.md (companion seat rule in cinema description, seat states definition, seating plan interaction requirement)
 - didactical-concept.md (likely student difficulties)
 - progress.md (this entry)
+
+## Iteration 7
+
+**Prompt:**  
+Identify the highest-priority improvement and apply it.
+
+**Focus:**  
+Disambiguate row mode's "consecutive seats without gaps" requirement in the context of aisles. The seating plan divides each row into three sections (3-8-3) separated by two aisles, but the row mode description treated each row as a flat sequence of 14 seats. Students need to decide what "consecutive" means when aisles are present, but the exercise did not prompt them to notice this design decision. This is a priority 3 issue (problem that makes the exercise hard to solve or teach).
+
+**Changes made:**  
+- In exercise.md, added a sentence to the row mode requirement prompting students to define what "consecutive without gaps" means in relation to aisles.
+- In exercise.md, added a comment prompt to the booking modes section of the document template reminding students to address how aisles affect consecutive seat selection.
+- In didactical-concept.md, added a new likely difficulty entry ("Row mode and aisles") explaining the hidden design decision and how to push students who overlook it.
+
+**Why:**  
+- The three-section layout with aisles creates a non-obvious design decision for row mode: can a consecutive block span an aisle, or must it stay within one section? Without prompting, many students will model rows as flat lists and never notice the question. This produces incomplete specs that look correct on the surface but fail when someone tries to implement them for the actual seating plan.
+- The fix does not pre-solve the decision. It makes students aware that the decision exists and asks them to state their rule explicitly.
+
+**Files modified:**  
+- exercise.md (row mode requirement, document template)
+- didactical-concept.md (likely student difficulties)
+- progress.md (this entry)
