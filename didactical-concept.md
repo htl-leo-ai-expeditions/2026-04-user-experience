@@ -29,6 +29,14 @@ This exercise trains precise specification writing, not coding and not visual de
 - Look for completeness of state definitions. Missing states = missing spec.
 - The conflict handling section is the strongest signal of spec quality. Weak docs say "show an error". Strong docs describe the full recovery flow.
 
+## Document template and worked example
+
+The exercise now includes a section-skeleton template and a worked example fragment (tooltip interaction). The template reduces blank-page paralysis and sets expectations for document structure. It does not pre-decide content: every section contains only a prompt, not an answer.
+
+The worked example deliberately uses a side topic (tooltips) that is not part of the core task. Students who copy the example verbatim gain nothing. The example's purpose is to calibrate precision: named states, explicit transitions, edge cases handled. Point students back to it when their writing is too vague.
+
+Watch for students who fill in the template with one-liners per section. The template sets structure; the worked example sets depth. Both are needed.
+
 ## Core vs. advanced boundary
 
 Core delivers a complete, implementable document for a single booking mode with basic conflict handling. Advanced requirements each add one independent dimension of complexity. Students can pick based on interest. The advanced tasks are designed so they don't require each other.

@@ -70,3 +70,27 @@ Flesh out the self-check section. It contained a TODO placeholder comment indica
 **Files modified:**  
 - exercise.md (self-check section rewritten)
 - progress.md (this entry)
+
+## Iteration 4
+
+**Prompt:**  
+Identify the highest-priority improvement and apply it. The exercise has core structure, seating plan, and fleshed-out self-check. Look for missing scaffolds/templates, ambiguity, or alignment issues.
+
+**Focus:**  
+Add a document template (section skeleton) and a worked example fragment to exercise.md. This is a priority 4 issue (missing scaffolds). Students must produce a structured UX design document but had no guidance on expected sections, granularity, or depth. The writing guide explicitly recommends templates over loose prose when students produce structured output.
+
+**Changes made:**  
+- Added a "Document template" section to exercise.md with a copy-ready section skeleton. Each section contains a comment prompt, not an answer.
+- Added a "Worked example: calibrating depth and precision" section with a tooltip interaction example. The example uses a side topic (not part of core requirements) to set the quality bar without leaking solutions.
+- Added a "Document template and worked example" section to didactical-concept.md explaining the pedagogical purpose: template reduces blank-page paralysis and sets structure; worked example calibrates depth and precision. Includes a teacher cue about students who fill the template with one-liners.
+
+**Why:**  
+- The writing guide states: "Whenever students are expected to produce structured output, prefer a copy-ready template over a vague paragraph." The exercise asks for a complete UX design document but previously gave no structural guidance.
+- Without a template, students must infer the expected document structure from scattered requirements. This adds unnecessary friction that is not part of the learning goal.
+- The worked example addresses a common calibration problem: students who write vaguely ("the seat changes") instead of precisely (named states, explicit transitions, edge cases). A concrete example sets the bar more effectively than instructions alone.
+- The example intentionally uses a side topic (tooltips) so it cannot be copied with superficial renaming, following the writing guide's rule against examples that mirror the main task.
+
+**Files modified:**  
+- exercise.md (added document template and worked example sections)
+- didactical-concept.md (added template/example guidance section)
+- progress.md (this entry)

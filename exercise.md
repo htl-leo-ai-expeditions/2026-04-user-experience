@@ -109,6 +109,64 @@ Pick one or more of these to extend your document:
 - **Real-time sync visualization:** When another user selects or reserves a seat, how does it animate or transition on your screen? Describe the visual feedback.
 - **Love seats:** Double-wide premium seats for couples (two seats that must be booked together). Describe selection behavior and cart display.
 
+## Document template
+
+Use this section outline for your UX design document. Copy it and fill in every section. You may add subsections, but do not remove any.
+
+```
+# UX Design Document: Kino Stella Seat Reservation
+
+## Screen overview
+<!-- Name the screen(s), describe their purpose, and state where film/date/showtime info appears. -->
+
+## Screen layout
+<!-- Describe the layout in terms of regions and their spatial relationships.
+     Do not specify colors, fonts, or pixel values. -->
+
+## Seat states
+<!-- List every seat state. For each state, describe:
+     - what the user sees (in terms of visual distinction, not specific colors)
+     - what triggers the transition into this state
+     - what transitions are possible out of this state -->
+
+## Seating plan interaction
+<!-- Describe what happens when the user clicks/taps a seat in each state.
+     Cover the companion seat rule and the group size limit. -->
+
+## Booking modes
+<!-- Describe row mode and pick mode separately.
+     State what happens when the user switches between modes. -->
+
+## Shopping cart
+<!-- State what information is shown per seat, how the total is calculated,
+     and how the cart updates when seats change. -->
+
+## Checkout flow
+<!-- Describe the steps from "seats selected" to "reservation confirmed."
+     State what information the confirmation screen shows. -->
+
+## Conflict handling
+<!-- Describe what happens when seats become unavailable after the user selected them.
+     Cover: message, state of the user's selection, and recovery flow. -->
+
+## Advanced: [your chosen extension]
+<!-- Only if you chose an advanced requirement. -->
+```
+
+## Worked example: calibrating depth and precision
+
+The example below shows the level of detail expected for one small part of the document. It uses a tooltip interaction, which is not part of your core task. Read it to calibrate your own writing, not to copy.
+
+> **Seat tooltip**
+>
+> When the user hovers over a seat (desktop) or long-presses a seat (mobile), a tooltip appears next to the seat showing: row letter, seat number, seat type, and price. The tooltip disappears when the cursor leaves the seat or when the user lifts their finger.
+>
+> If the seat is in the "reserved" state, the tooltip shows only "Reserved" and omits price and seat type.
+>
+> If another tooltip is already visible, it closes before the new one opens. Only one tooltip is visible at a time.
+
+This example shows three things: (1) every user action has a defined outcome, (2) different states lead to different behavior, (3) edge cases (mobile, already-open tooltip) are handled explicitly. Your document sections must reach this level of precision.
+
 ## Self-check before submission
 
 Go through these questions before you hand in your document. Every answer should be "yes."
