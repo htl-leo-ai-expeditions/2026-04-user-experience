@@ -19,7 +19,7 @@ This exercise trains precise specification writing, not coding and not visual de
 
 - **Conflating types and states:** Students will mix seat types (regular, premium, wheelchair, companion) with seat states (available, selected, reserved). These are orthogonal dimensions. A wheelchair seat can be available, selected, or reserved. Push students to model them separately: types are fixed properties of a seat; states change during a session.
 - **Too vague on states:** Students will write "the seat changes color" instead of defining named states and transitions. Push them toward explicit state names and transition triggers.
-- **Ignoring edge cases:** Companion seat logic and conflict handling will be underspecified. Students tend to describe the happy path only.
+- **Ignoring edge cases:** Companion seat logic and conflict handling will be underspecified. Students tend to describe the happy path only. The companion seat rule has two directions: selecting the companion without the wheelchair seat, and deselecting the wheelchair seat while the companion is still selected. Many students will cover only the first.
 - **Mixing visual design into the doc:** Some students will start specifying colors, fonts, CSS. Redirect to interaction logic.
 - **Booking mode switch:** Students often forget to describe what happens to current selections when switching modes.
 - **Confusing "what" and "how":** Students may describe implementation details (WebSocket, polling) instead of user-visible behavior.

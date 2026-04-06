@@ -52,7 +52,7 @@ Your document describes UI/UX logic: what screens exist, what elements are on ea
 - Some seats are premium seats (more expensive, better position).
 - Three wheelchair-accessible seats:
   - Two are side-by-side.
-  - The third has a companion seat next to it. The companion seat can only be booked if the wheelchair seat is also booked.
+  - The third has a companion seat next to it. The companion seat can only be selected if the same user also selects the wheelchair seat next to it. A user who selects the wheelchair seat is not required to also select the companion seat.
 - Maximum group size: 6 people.
 
 ## Core requirements
@@ -62,9 +62,9 @@ Your UX design document must cover all of the following:
 ### Seating plan interaction
 
 - Interactive seating plan showing all seats with their current state
-- Every seat has a type (regular, premium, wheelchair, companion) and a state. These are two separate dimensions: a wheelchair seat can be available, selected, or reserved, just like a regular seat. Seat states your document must define: available, selected (by current user), reserved (by another user), companion-locked (companion seat when its wheelchair seat is not selected), and any others you identify
+- Every seat has a type (regular, premium, wheelchair, companion) and a state. These are two separate dimensions: a wheelchair seat can be available, selected, or reserved, just like a regular seat. Seat states your document must define: available, selected (by current user), reserved (by another user), companion-locked (companion seat whose adjacent wheelchair seat is not selected by the current user), and any others you identify
 - Clicking/tapping a seat selects or deselects it
-- The companion seat rule: describe exactly what happens when a user tries to book the companion seat without the wheelchair seat, and vice versa
+- The companion seat rule: describe exactly what happens when a user tries to select the companion seat without selecting the wheelchair seat, and what happens when a user deselects the wheelchair seat while the companion seat is still selected
 - Group size limit of 6: what happens when the user tries to select a 7th seat?
 
 ### Booking modes

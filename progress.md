@@ -119,3 +119,26 @@ Disambiguate seat types from seat states. The exercise listed "wheelchair" and "
 - exercise.md (seat states bullet, document template, self-check)
 - didactical-concept.md (requirement-to-learning map, likely difficulties)
 - progress.md (this entry)
+
+## Iteration 6
+
+**Prompt:**  
+Identify the highest-priority improvement and apply it.
+
+**Focus:**  
+Resolve ambiguous companion seat rule terminology. The cinema description used "booked" ("The companion seat can only be booked if the wheelchair seat is also booked"), while the state definition used "selected" ("companion seat when its wheelchair seat is not selected"). These terms imply different behaviors: "booked" suggests a confirmed reservation (database state), while "selected" refers to the current user's in-progress selection (UI state). This is a priority 2 issue (ambiguity in a core requirement).
+
+**Changes made:**  
+- In exercise.md, rewrote the companion seat rule in the cinema description to use "selected" consistently and to clarify it is about the same user's selection, not a confirmed reservation.
+- Added the reverse case to the companion seat interaction requirement: what happens when the user deselects the wheelchair seat while the companion seat is still selected.
+- Updated the companion-locked state definition to clarify it refers to the current user's selection of the adjacent wheelchair seat.
+- In didactical-concept.md, expanded the "Ignoring edge cases" difficulty to explicitly mention the two directions of the companion seat rule (selecting companion without wheelchair, and deselecting wheelchair while companion is selected).
+
+**Why:**  
+- The inconsistent terminology ("booked" vs. "selected") could lead students to design two very different behaviors. Using "selected" consistently makes clear that the companion seat rule is a UI-level constraint within a single user's session, not a database-level reservation dependency.
+- The reverse case (deselecting the wheelchair seat) was implicit but never stated. Students who only think about the forward case will produce incomplete specs. Making this explicit in the exercise requirement and in the didactical concept ensures both students and teachers attend to it.
+
+**Files modified:**  
+- exercise.md (companion seat rule in cinema description, seat states definition, seating plan interaction requirement)
+- didactical-concept.md (likely student difficulties)
+- progress.md (this entry)
