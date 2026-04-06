@@ -37,8 +37,9 @@ Your document describes UI/UX logic: what screens exist, what elements are on ea
 
 ## The cinema: Kino Stella
 
-<!-- TODO: seating plan visualization (seating-plan.png) goes here -->
-<!-- Students derive all seating details from the image. No written seat counts or row details. -->
+![Kino Stella seating plan](seating-plan.png)
+
+<!-- Students derive all seating details from the image. No written seat counts or row details are given in the text. -->
 
 **Seat types and pricing** (fixed, not dependent on film or showtime):
 
